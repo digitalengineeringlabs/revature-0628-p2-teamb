@@ -36,7 +36,7 @@ import { Router } from '@angular/router';
     constructor(
       protected employee_id: number,
       protected type: string,
-      protected desc: string,
+      protected desription: string,
       protected amount: number,
       protected status: string
     ) {}
