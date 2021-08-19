@@ -1,0 +1,16 @@
+<form (ngSubmit)="onSubmit(employeeForm)" #employeeForm="ngForm" novalidate>
+    <label for="employee_id">Employee ID</label>
+    <input name="employee_id" type="number" ngModel="ticketModel.employee_id">
+    <label for="amount">Amount</label>
+    <input name="amount" type="number" ngModel="ticketModel.amount">
+    <label for="type">Type</label>
+    <select name="type" ngModel="ticketModel.type">
+        <option value="food">Food</option>
+        <option value="lodge">Lodging</option>
+        <option value="travel">Travel</option>
+        <option value="other">Other</option>
+    </select>>
+    <label for="desc">Description</label>
+    <input name="desc" type="textarea" ngModel="ticketModel.desc">
+    <input name="status" type="hidden" value="pending" ngModel="ticketModel.status">
+</form>
