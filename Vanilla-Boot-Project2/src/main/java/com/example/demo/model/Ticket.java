@@ -39,6 +39,7 @@ public class Ticket {
 	@JoinColumn(name="employee_id", nullable=false)
 	private Employee employee;
 	
+	
 	public Ticket() {}
 	
 	public Ticket(String type, String description, float amount, Date time, String status) {

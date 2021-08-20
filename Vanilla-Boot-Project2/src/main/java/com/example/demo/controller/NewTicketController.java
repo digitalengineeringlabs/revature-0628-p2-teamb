@@ -2,6 +2,8 @@ package com.example.demo.controller;
 
 
 import java.net.URI;
+import java.util.Optional;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -13,8 +15,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.servlet.support.ServletUriComponentsBuilder;
 
-import com.example.demo.manager.LoginManager;
 import com.example.demo.manager.TicketManager;
+import com.example.demo.manager.dao.TicketDAO;
 import com.example.demo.model.Employee;
 import com.example.demo.model.Ticket;
 
@@ -24,30 +26,26 @@ public class NewTicketController {
 
 	@Autowired
 	private TicketManager manager;
+
 	
-//	@GetMapping(produces="application/json")
-//	public Ticket test() {
-//		Employee e = new Employee();
-//		e.setEmail("someemail@gmail.com");
-//		e.setPassword("test");
+	
+//	@CrossOrigin(origins="http://localhost:4200")
+//	@PostMapping(consumes="application/json", produces="application/json")
+//	public ResponseEntity<Object> addTicket(@RequestBody Ticket ticket) throws Exception {
 //		
-//		return e;
+//		URI location = ServletUriComponentsBuilder.fromCurrentRequest()
+//				.path("/new")
+//				.buildAndExpand(1) // This variable may be wrong? should replace with db serial?
+//				.toUri();
+//		
+//		return ResponseEntity.created(location).build();
+//		
 //	}
 	
-	@CrossOrigin(origins="http://localhost:4200")
+	//@CrossOrigin(origins="http://localhost:4200")
 	@PostMapping(consumes="application/json", produces="application/json")
-	public ResponseEntity<Object> addTicket(@RequestBody Ticket ticket) throws Exception {
-		
-		URI location = ServletUriComponentsBuilder.fromCurrentRequest()
-				.path("/new")
-				.buildAndExpand(1) // This variable may be wrong? should replace with db serial?
-				.toUri();
-		
-		return ResponseEntity.created(location).build();
-		
-		
-		
-		
+	public ResponseEntity<Object> addNewTicket(@RequestBody Ticket ticket) throws Exception {
+		return new ResponseEntity<>(manager.postNewTicket(ticket), HttpStatus.CREATED);
 	}
 	
 }
