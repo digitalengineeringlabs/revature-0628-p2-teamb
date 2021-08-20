@@ -1,4 +1,4 @@
-package controller;
+package driver.controller;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -7,7 +7,6 @@ import java.util.Optional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -21,7 +20,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 //List<Ticket> findByEmpId(int employee_id);
 //List<Ticket> findByTicketId(long ticket_id);
-import model.Ticket;
+import driver.model.Ticket;
 
 //@CrossOrigin(origins = "http://localhost:8081")
 @RestController
@@ -29,10 +28,10 @@ import model.Ticket;
 public class Controller {
 
 	@Autowired
-	repo.Repository repository;
+	driver.repository.Repository repository;
 
 	@GetMapping("/tickets")
-	public ResponseEntity<List<Ticket>> getAllTutorials(@RequestParam(required = false) int employee_id) {
+	public ResponseEntity<List<Ticket>> getAllTickets(@RequestParam(required = false) int employee_id) {
 		try {
 			List<Ticket> riembursements = new ArrayList<Ticket>();
 
@@ -52,7 +51,7 @@ public class Controller {
 	}
 
 	@GetMapping("/tickets/{id}")
-	public ResponseEntity<Ticket> getTutorialById(@PathVariable("id") long ticket_id) {
+	public ResponseEntity<Ticket> getTicketsById(@PathVariable("id") long ticket_id) {
 		Optional<Ticket> Data = repository.findById(ticket_id);
 
 		if (Data.isPresent()) {
@@ -63,7 +62,7 @@ public class Controller {
 	}
 
 	@PostMapping("/tickets")
-	public ResponseEntity<Ticket> createTutorial(@RequestBody Ticket riembursement) {
+	public ResponseEntity<Ticket> createTicket(@RequestBody Ticket riembursement) {
 		try {
 			Ticket reimb = repository
 					.save(new Ticket());
@@ -74,7 +73,7 @@ public class Controller {
 	}
 
 	@PutMapping("/tickets/{id}")
-	public ResponseEntity<Ticket> updateTutorial(@PathVariable("id") long id, @RequestBody Ticket riembursement) {
+	public ResponseEntity<Ticket> updateTicket(@PathVariable("id") long id, @RequestBody Ticket riembursement) {
 		Optional<Ticket> tutorialData = repository.findById(id);
 
 		if (tutorialData.isPresent()) {
@@ -89,7 +88,7 @@ public class Controller {
 	}
 
 	@DeleteMapping("/tickets/{id}")
-	public ResponseEntity<HttpStatus> deleteTutorial(@PathVariable("id") long ticket_id) {
+	public ResponseEntity<HttpStatus> deleteTicket(@PathVariable("id") long ticket_id) {
 		try {
 			repository.deleteById(ticket_id);
 			return new ResponseEntity<>(HttpStatus.NO_CONTENT);
@@ -99,7 +98,7 @@ public class Controller {
 	}
 
 	@DeleteMapping("/tickets")
-	public ResponseEntity<HttpStatus> deleteAllTutorials() {
+	public ResponseEntity<HttpStatus> deleteAllTickets() {
 		try {
 			repository.deleteAll();
 			return new ResponseEntity<>(HttpStatus.NO_CONTENT);
@@ -109,7 +108,7 @@ public class Controller {
 
 	}
 
-	@GetMapping("/tickets/approved")
+	@GetMapping("/tickets/manager")
 	public ResponseEntity<List<Ticket>> findByEmpId() {
 		try {
 			List<Ticket> riembursements = repository.findByEmpId(1);
