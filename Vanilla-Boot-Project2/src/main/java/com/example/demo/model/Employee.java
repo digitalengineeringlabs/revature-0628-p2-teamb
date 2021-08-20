@@ -10,8 +10,10 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.OneToMany;
 import javax.persistence.SequenceGenerator;
+import javax.persistence.Table;
 
-@Entity(name="employee")
+@Entity
+@Table(name="employee")
 public class Employee {
 
 	@Id
