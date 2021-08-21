@@ -1,12 +1,17 @@
-<div>
-    <form (ngSubmit)="onSubmit(f)" #f="ngForm">
-        <h2>Employee Login</h2>
-        <label for="email">Email: </label>
-        <input id="email" type="text" name="email" ngModel>
-        <br><br>
-        <label for="password">Password: </label>
-        <input id="password" type="password" name="password" ngModel>
-        <br><br>
-        <button type="submit">Login</button>
-    </form>
+<div id="page">
+    <div id="main">
+        <form (ngSubmit)="onSubmit(f)" #f="ngForm">
+            <h1>Employee Login</h1>
+            <div *ngIf="invalid === true; else isvalid">Incorrect Email/Password</div>
+            <label for="email">Email: </label>
+            <input id="email" type="text" name="email" required ngModel>
+            <br><br>
+            <label for="password">Password: </label>
+            <input id="password" type="password" name="password" required ngModel>
+            <br><br>
+            <button type="submit" [disabled]=!f.valid>Login</button>
+        </form>
+    </div>
 </div>
+
+<ng-template #isvalid><br></ng-template>

@@ -11,23 +11,24 @@ import { Router } from "@angular/router";
 })
 export class LoginComponent implements OnInit {
 
+  invalid:boolean = false;
+
   constructor(private http:HttpClient, private router:Router) { }
 
   ngOnInit(): void {
   }
 
   onSubmit(form:NgForm) {
-    // this.http.get('http://localhost:8080/login').subscribe({
-    //   next: (data) => {
-    //     console.log(data);
-    //   }
-    // })
-    
     console.log(JSON.stringify({email:form.value.email, password:form.value.password}))
-    this.http.post('http://localhost:8080/login', {email:form.value.email, password:form.value.password})
+    this.http.post('http://localhost:8080/login', {email:form.value.email, password:form.value.password, something:"hello"})
       .subscribe({
         next: (data) => {
-            console.log(data);
+            if(data != null) {
+              localStorage.setItem("employee", JSON.stringify(data));
+              this.router.navigate(['home']);
+            } else {
+              this.invalid = true;
+            }
         }
       })
   }
