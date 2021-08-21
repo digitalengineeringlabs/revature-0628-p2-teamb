@@ -25,11 +25,11 @@ public class TicketManagerImpl implements TicketManager {
 		// TODO Auto-generated method stub
 		
 		Optional<Employee> e = eDao.findById(1);
+		Date d = new Date();
+		ticket.setTime(d);
 		ticket.setEmployee(e.get());
 		dao.save(ticket);
 		return dao.findById(ticket.getId());
-		
-		
 		
 	}
 	

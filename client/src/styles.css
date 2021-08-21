@@ -1,1 +1,44 @@
 /* You can add global styles to this file, and also import other style files */
+
+body{
+    height: 100vh;
+}
+
+.center{
+    text-align: center;
+    justify-content: center;
+    align-items: center;  
+}
+
+.row{
+    text-align: center;
+    justify-content: center;
+    align-items: center; 
+}
+
+.header {
+    padding: 25px;
+    margin: 25px auto;
+}
+
+.ticketCont {
+    margin-top: 150px;
+    background-image: url(assets/bluebg.png);
+    text-align: center;
+    justify-content: center;
+    align-items: center; 
+    border-radius: 27px;
+    color: aliceblue;
+}
+
+.ticketShade{
+    height: 100%;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.363);
+    border-radius: 27px;
+}
+
+.formBody{
+    padding: 25px;
+    margin: 25px auto;
+}
