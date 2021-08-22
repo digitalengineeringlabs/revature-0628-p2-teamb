@@ -42,7 +42,7 @@ public class NewTicketController {
 //		
 //	}
 	
-	//@CrossOrigin(origins="http://localhost:4200")
+	@CrossOrigin(origins="http://localhost:4200")
 	@PostMapping(consumes="application/json", produces="application/json")
 	public ResponseEntity<Object> addNewTicket(@RequestBody Ticket ticket) throws Exception {
 		return new ResponseEntity<>(manager.postNewTicket(ticket), HttpStatus.CREATED);
