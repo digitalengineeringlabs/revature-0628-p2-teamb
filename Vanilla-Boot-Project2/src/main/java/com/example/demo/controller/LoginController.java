@@ -1,8 +1,6 @@
 package com.example.demo.controller;
 
-
-import java.net.URI;
-import java.util.Optional;
+import java.util.Map;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -13,27 +11,22 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
-import org.springframework.web.servlet.support.ServletUriComponentsBuilder;
-
-import com.example.demo.manager.TicketManager;
-import com.example.demo.manager.dao.TicketDAO;
+import com.example.demo.manager.LoginManager;
 import com.example.demo.model.Employee;
-import com.example.demo.model.Ticket;
 
 @RestController
-@RequestMapping(path="/tickets")
-public class NewTicketController {
+@RequestMapping(path="/login")
+public class LoginController {
 
 	@Autowired
-	private TicketManager manager;
-
+	private LoginManager manager;
 	
-	
-	
-	@CrossOrigin(origins="http://localhost:4200")
+	@CrossOrigin(origins = "http://localhost:4200")
 	@PostMapping(consumes="application/json", produces="application/json")
-	public ResponseEntity<Object> addNewTicket(@RequestBody Ticket ticket) throws Exception {
-		return new ResponseEntity<>(manager.postNewTicket(ticket), HttpStatus.CREATED);
+	public ResponseEntity<Object> getEmployeeLogin(@RequestBody Employee employee) {
+		System.out.println(employee.getEmail());
+		System.out.println(employee.getPassword());
+		return new ResponseEntity<>(manager.findLogin(employee.getEmail(), employee.getPassword()), HttpStatus.CREATED);
 	}
 	
 }

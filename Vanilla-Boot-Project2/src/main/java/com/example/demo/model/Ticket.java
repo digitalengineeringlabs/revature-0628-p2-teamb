@@ -35,11 +35,24 @@ public class Ticket {
 	@Column
 	private String status;
 	
+	@Column
+	private int empid;
+	
 	@ManyToOne
 	@JoinColumn(name="employee_id", nullable=false)
 	private Employee employee;
 	
 	
+	
+	public int getEmpId() {
+		return this.empid;
+	}
+	
+	public void setEmpId(int i) {
+		this.empid = i;
+	}
+
+
 	public Ticket() {}
 	
 	public Ticket(String type, String description, float amount, Date time, String status) {

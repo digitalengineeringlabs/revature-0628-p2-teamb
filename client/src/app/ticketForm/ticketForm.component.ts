@@ -21,7 +21,8 @@ import { Router } from '@angular/router';
         amount: form.value.amount,
         type: form.value.type,
         description: form.value.description,
-        status: form.value.status
+        status: form.value.status,
+        empid: form.value.empid
       }))
       .subscribe({
         next:(data:any)=>{
@@ -42,6 +43,7 @@ import { Router } from '@angular/router';
       protected type: string,
       protected desription: string,
       protected amount: number,
-      protected status: string
+      protected status: string,
+      protected empid:number
     ) {}
   }

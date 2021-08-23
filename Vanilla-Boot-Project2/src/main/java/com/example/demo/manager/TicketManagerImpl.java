@@ -22,9 +22,15 @@ public class TicketManagerImpl implements TicketManager {
 	
 	@Override
 	public Optional<Ticket> postNewTicket(Ticket ticket) {
+		System.out.println(ticket.getEmpId());
 		// TODO Auto-generated method stub
-		
-		Optional<Employee> e = eDao.findById(1);
+		int i = ticket.getEmpId();
+		Optional<Employee> e = null;	
+		try {
+			e = eDao.findById(i);			
+		} catch (Exception f) {
+			System.out.println(f);
+		}
 		Date d = new Date();
 		ticket.setTime(d);
 		ticket.setEmployee(e.get());
