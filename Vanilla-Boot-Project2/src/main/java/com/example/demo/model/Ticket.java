@@ -16,7 +16,7 @@ public class Ticket {
 	
 	@Id
 	@GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "id_generator")
-	@SequenceGenerator(name="id_generator", sequenceName = "ticketdo_id_seq", allocationSize = 1)
+	@SequenceGenerator(name="id_generator", sequenceName = "ticket_id_seq", allocationSize = 1)
 	@Column(name="ticket_id")
 	private int id;
 	
@@ -38,6 +38,7 @@ public class Ticket {
 	@ManyToOne
 	@JoinColumn(name="employee_id", nullable=false)
 	private Employee employee;
+	
 	
 	public Ticket() {}
 	

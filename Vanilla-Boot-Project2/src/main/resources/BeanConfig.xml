@@ -16,6 +16,7 @@
 	<!-- Bean definitions -->
 	
    	<bean id="loginManager" class="com.example.demo.manager.LoginManagerImpl"></bean>
+   	<bean id="TicketManager" class="com.example.demo.manager.TicketManagerImpl"></bean>
    	
    	
 </beans>
