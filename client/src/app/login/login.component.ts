@@ -22,9 +22,10 @@ export class LoginComponent implements OnInit {
     console.log(JSON.stringify({email:form.value.email, password:form.value.password}))
     this.http.post('http://localhost:8080/login', {email:form.value.email, password:form.value.password, something:"hello"})
       .subscribe({
-        next: (data) => {
+        next: (data:any) => {
             if(data != null) {
-              localStorage.setItem("employee", JSON.stringify(data));
+              localStorage.setItem("id", data.id);
+              localStorage.setItem("role", data.role);
               this.router.navigate(['home']);
             } else {
               this.invalid = true;

@@ -26,7 +26,11 @@ public class LoginController {
 	public ResponseEntity<Object> getEmployeeLogin(@RequestBody Employee employee) {
 		System.out.println(employee.getEmail());
 		System.out.println(employee.getPassword());
-		return new ResponseEntity<>(manager.findLogin(employee.getEmail(), employee.getPassword()), HttpStatus.CREATED);
+		Employee e = manager.findLogin(employee.getEmail(), employee.getPassword());
+		Employee temp = new Employee();
+		temp.setId(e.getId());
+		temp.setRole(e.getRole());
+		return new ResponseEntity<>(temp, HttpStatus.CREATED);
 
 	}
 	
