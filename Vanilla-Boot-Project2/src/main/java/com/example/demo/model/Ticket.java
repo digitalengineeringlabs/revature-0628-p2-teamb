@@ -35,6 +35,9 @@ public class Ticket {
 	@Column
 	private String status;
 	
+	@Column
+	private int empid;
+	
 	@ManyToOne
 	@JoinColumn(name="employee_id", nullable=false)
 	private Employee employee;
@@ -49,6 +52,14 @@ public class Ticket {
 		this.status = status;
 	}
 
+	public int getEmpId() {
+		return this.empid;
+	}
+	
+	public void setEmpId(int i) {
+		this.empid = i;
+	}
+	
 	public int getId() {
 		return id;
 	}

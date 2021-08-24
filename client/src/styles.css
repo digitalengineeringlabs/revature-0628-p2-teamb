@@ -21,6 +21,10 @@ body{
     margin: 25px auto;
 }
 
+.btn-primary{
+    margin-top: 10px;
+}
+
 .ticketCont {
     margin-top: 150px;
     background-image: url(assets/bluebg.png);

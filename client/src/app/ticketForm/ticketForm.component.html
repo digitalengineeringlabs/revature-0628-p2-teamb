@@ -22,8 +22,10 @@
                     </select><br>
                     <label for="description">Description</label>
                     <br><textarea name="description" type="textarea" ngModel="ticketModel.desc" rows="3" columns="50"></textarea><br>
-                    <input name="status" type="hidden" value="pending" ngModel="ticketModel.status">
-                    <button type="submit" class="btn btn-primary">Submit</button>
+                    <input name="status" type="hidden" value="pending" ngModel="pending"><br>
+                    <label for="empid">Employee ID</label><br>
+                    <br><input name="empid" type="number" ngModel="1">
+                    <br><button type="submit" class="btn btn-primary">Submit</button>
                 </form>
             </div>
         </div>

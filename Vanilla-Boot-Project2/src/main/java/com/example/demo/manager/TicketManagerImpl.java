@@ -24,13 +24,29 @@ public class TicketManagerImpl implements TicketManager {
 	public Optional<Ticket> postNewTicket(Ticket ticket) {
 		// TODO Auto-generated method stub
 		
-		Optional<Employee> e = eDao.findById(1);
-		Date d = new Date();
-		ticket.setTime(d);
-		ticket.setEmployee(e.get());
-		dao.save(ticket);
-		return dao.findById(ticket.getId());
+//		data being written to ticket is changed from 
+//		what is confirmed to be sending on the front end
 		
+		
+		try {
+			System.out.println(ticket.getEmpId());
+			int empid = ticket.getEmpId();
+			
+			Optional<Employee> e = eDao.findById(empid);
+			if(!e.isPresent()) {
+				System.out.println("not present");
+			} else {
+				ticket.setEmployee(e.get());
+				Date d = new Date();
+				ticket.setTime(d);
+				dao.save(ticket);
+			}	
+		
+		} catch(Exception j) {
+			System.out.println(j);
+		}
+		
+		return dao.findById(ticket.getId());
 	}
 	
 	
