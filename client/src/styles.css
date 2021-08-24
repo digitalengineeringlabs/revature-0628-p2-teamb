@@ -32,7 +32,7 @@ body{
 }
 
 .ticketCont {
-    margin-top: 150px;
+    margin-top: 0px;
     background-image: url(assets/bluebg.png);
     text-align: center;
     justify-content: center;
