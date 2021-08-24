@@ -22,7 +22,7 @@ import { Router } from '@angular/router';
         type: form.value.type,
         description: form.value.description,
         status: form.value.status,
-        empid: form.value.empid
+        empId: form.value.empid
       }))
       .subscribe({
         next:(data:any)=>{
