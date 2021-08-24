@@ -2,6 +2,7 @@ package com.example.demo.controller;
 
 
 import java.net.URI;
+import java.util.Map;
 import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -27,7 +28,6 @@ public class NewTicketController {
 	@Autowired
 	private TicketManager manager;
 
-	
 	
 //	@CrossOrigin(origins="http://localhost:4200")
 //	@PostMapping(consumes="application/json", produces="application/json")

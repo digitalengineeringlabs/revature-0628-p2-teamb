@@ -10,11 +10,15 @@ import { AppComponent } from './app.component';
 import { LoginComponent } from './login/login.component';
 import { HomeComponent } from './home/home.component';
 import { AuthGuard } from './auth.guard';
+import { newTicket } from './ticketForm/ticketForm.component';
+import { MyRequestsComponent } from './my-requests/my-requests.component';
 
 const routes:Routes = [
   {path: '', component: HomeComponent, canActivate:[AuthGuard]},
   {path: 'home', component:HomeComponent, canActivate:[AuthGuard]},
-  {path: 'login', component: LoginComponent}
+  {path: 'ticketform', component:newTicket},
+  {path: 'login', component: LoginComponent},
+  {path: 'mytickets', component:MyRequestsComponent}
 ]
 
 @NgModule({
@@ -22,7 +26,9 @@ const routes:Routes = [
     AppComponent,
     LoginComponent,
     HomeComponent,
-    routingComponents
+    newTicket,
+    routingComponents,
+    MyRequestsComponent
   ],
   imports: [
     BrowserModule,

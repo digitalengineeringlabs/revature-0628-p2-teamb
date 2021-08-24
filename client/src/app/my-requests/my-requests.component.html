@@ -1,0 +1,25 @@
+<div>
+    <table>
+        <thead>
+            <tr>
+                <th>Ticket Id</th>
+                <th>Type</th>
+                <th>Description</th>
+                <th>Amount</th>
+                <th>Time</th>
+                <th>Status</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let req of requests">
+                <td>{{req.id}}</td>
+                <td>{{req.type}}</td>
+                <td>{{req.description}}</td>
+                <td>$ {{req.amount.toFixed(2)}}</td>
+                <td>{{formatDate(req.time)}}</td>
+                <td>{{req.status}}</td>
+            </tr>
+        </tbody>
+    </table>
+
+</div>
