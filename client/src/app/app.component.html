@@ -1,23 +1,23 @@
 <div class="container">
 
-<div class="row">
-<h1>Sign Up</h1>
-<form action="/" method="POST">
-  <div class="form-group">
-      <label for="username">Username</label>
-      <input type="text" name="username" class="form-control" id="" >
+  <div class="row">
+  <h1>Sign Up</h1>
+  <form action="/" method="POST">
+    <div class="form-group">
+        <label for="username">Username</label>
+        <input type="text" name="username" class="form-control" id="" >
+    </div>
+    <div class="form-group">
+        <label for="password">Password</label><br />
+        <input type="password" name="password" class="form-control" id="" >
+    </div>
+    <div class="form-group">
+      <label for="email">Email</label>
+      <input type="email" name="email" class="form-control" >
+    </div>
+    <button type="submit" class="btn btn-primary">Login</button>
+  </form>
+  <a href="login.html">Already have an account? Sign in</a>
   </div>
-  <div class="form-group">
-      <label for="password">Password</label><br />
-      <input type="password" name="password" class="form-control" id="" >
   </div>
-  <div class="form-group">
-    <label for="email">Email</label>
-    <input type="email" name="email" class="form-control" >
-  </div>
-  <button type="submit" class="btn btn-primary">Login</button>
-</form>
-<a href="login.html">Already have an account? Sign in</a>
-</div>
-
-</div>
+  <router-outlet></router-outlet>
