@@ -52,3 +52,7 @@ body{
     padding: 25px;
     margin: 25px auto;
 }
+
+.nav-item {
+    color: white;
+}
