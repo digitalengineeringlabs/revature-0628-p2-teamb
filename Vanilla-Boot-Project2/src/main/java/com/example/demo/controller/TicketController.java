@@ -19,7 +19,7 @@ public class TicketController {
 	@Autowired
 	private TicketService service;
 	
-	@GetMapping("/tickets")
+	@GetMapping("/Alltickets")
 	public List<Ticket> getTickets(){
 		return service.getTickets();
 	}
