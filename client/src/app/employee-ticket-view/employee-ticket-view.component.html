@@ -1,28 +1,94 @@
 <div class="container">
-    <div class="card">
-      
+  <div class="jumbotron card">
+    <h2>View Past Tickets </h2>
+    <!--Need to modify-->
+  <form action="#" method="POST">
+      <label for="statusFilter">Filter requests by ticket status</label>
+      <select name="statusFilter" id="status">
+        <option value="pending">Pending</option>
+        <option value="approved">Approved</option>
+        <option value="rejected">Rejected</option>
+      </select>
+      <input type="submit" value="Search">
+  </form>
+      <table class="table table-striped table-hover">
+          <thead class="table-light">
+              <tr>
+                  <th>Type of Reimbursement</th>
+                  <th>Amount to be Reimbursed</th>
+                  <th>Description</th>
+                  <th>Receipt Document or Image</th>
+                  <th>Timestamp</th>
+                  <th>Status</th>
+                  <th></th>
+              </tr>
+          </thead>
+          <tbody>
+              <tr>
+                  <td>Food</td>
+                  <td>$25</td>
+                  <td>Dinner</td>
+                  <td>restaurant.png</td>
+                  <td>05/21/20</td>
+                  <td>Approved</td>
+                  <td>Edit | Details | Delete </td>
+              </tr>
+              <tr>
+                  <td>Travel</td>
+                  <td>$500</td>
+                  <td>Flight to Conference- Business Class</td>
+                  <td>airlines.png</td>
+                  <td>08/14/21</td>
+                  <td>Approved</td>
+                  <td>Edit | Details | Delete </td>
+              </tr>
+              <tr>
+                  <td>Lodging</td>
+                  <td>$500</td>
+                  <td>Hotel</td>
+                  <td>receipt.jpg</td>
+                  <td>07/10/20</td>
+                  <td>Approved</td>
+                  <td>Edit | Details | Delete </td>
+              </tr>
+              <tr>
+                  <td>Other</td>
+                  <td>$1,440</td>
+                  <td>Laptop</td>
+                  <td>apple.png</td>
+                  <td>6/14/21</td>
+                  <td>Rejected</td>
+                  <td>Edit | Details | Delete </td>
+              </tr>
+          </tbody>
+  
+      </table>
+  </div>
+    <div class="jumbotron card">
       <h5 class="card-header">Ticket</h5>
       <div class="card-body">
         <div>
-          <p class="card-title">Employee Name: <!--{{employeeTicketView.employeeName}}--></p>
-          <p>Reimbursement Type: <!--{{employeeTicketView.reimbursementType}}--></p>
-          <p>Amount Requested: <!--${{employeeTicketView.amount}}--></p>
-          <p>Description: <!--{{employeeTicketView.description}}--></p>
+          <p class="card-title"><strong>Employee Name: </strong><!--{{employeeTicketView.employeeName}}--></p>
+          <p><strong>Reimbursement Type: </strong> <!--{{employeeTicketView.reimbursementType}}--></p>
+          <p><strong>Amount Requested:</strong> <!--${{employeeTicketView.amount}}--></p>
+          <p><strong>Description:</strong> <!--{{employeeTicketView.description}}--></p>
       
-          <p>Timestamp: <!--{{employeeTicketView.timestamp}}--></p>
-          <p>Status: <!--{{employeeTicketView.status}}--></p>
+          <p><strong>Timestamp: </strong><!--{{employeeTicketView.timestamp}}--></p>
+          <p><strong>Status:</strong> <!--{{employeeTicketView.status}}--></p>
         </div>
         <div>
           <!--<p>Image: <img [src]="image" alt="{{file}}"></p>-->
         </div>
-        
-  
-      <button class="btn btn-primary">Approve</button>
-      <button class="btn btn-secondary">Deny</button>
+      <button class="btn bg-primary">Approve</button>
+      <button class="btn bg-secondary text-dark">Deny</button>
       </div>
+      <!--If ticket is successfully created-->
       <div class="alert alert-success" role="alert" ngIf="Approve()">
         Ticket successfully created!
       </div>
     </div>
   </div>
+
+  
+
     

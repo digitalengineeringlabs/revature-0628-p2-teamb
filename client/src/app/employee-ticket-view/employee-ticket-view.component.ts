@@ -1,8 +1,9 @@
-import { Component, OnInit } from '@angular/core';
 import { HttpClient, HttpClientModule } from '@angular/common/http';
+import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 
 export class EmployeeTicketView {
-  constructor(
+  /*constructor(
     public id: number,
     public amount: number,
     public description: string,
@@ -11,7 +12,7 @@ export class EmployeeTicketView {
     public type: string,
     public employee_id: number
   ) {
-  }
+  }*/
 }
 
 @Component({
@@ -21,14 +22,13 @@ export class EmployeeTicketView {
 })
 export class EmployeeTicketViewComponent implements OnInit {
   
+  constructor(private http:HttpClient, private router:Router) {}
+  
   ngOnInit(): void {
-    this.getEmployeeTickets();
+    //this.getEmployeeTickets();
   }
 
-  constructor(
-    private httpClient: HttpClient
-  ) { }
-
+/*
   getEmployeeTickets(){
     this.httpClient.get<any>('http://localhost:8080/employeeTicketView').subscribe(
       response => {
@@ -36,5 +36,5 @@ export class EmployeeTicketViewComponent implements OnInit {
         //this.employeeTickets = response;
       }
     );
-  }
+  }*/
 }
