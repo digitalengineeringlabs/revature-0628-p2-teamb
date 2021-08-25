@@ -1,0 +1,36 @@
+
+label {
+    display: inline-block;
+    width: 80px;
+    text-align: left;
+}
+
+#main {
+    position: absolute;
+    width: 40%;
+    height: 40%;
+    top:50%;
+    left:50%;
+    transform: translate(-50%, -50%);
+    box-shadow: 20px 20px 15px black;
+
+    border: 3px solid black;
+    border-radius: 10px;
+    background-color: cyan;
+    opacity: 0.9;
+}
+
+form {
+    position: absolute;
+    top: 50%;
+    left:50%;
+    width: 100%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    /* transform: translate(0%, 20%); */
+}
+
+h1 {
+    font-size: 4vw;
+}
+

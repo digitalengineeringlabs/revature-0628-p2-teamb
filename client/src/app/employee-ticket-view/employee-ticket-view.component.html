@@ -1,0 +1,91 @@
+<div class="container">
+  <div class="jumbotron card">
+    <h2>View Past Tickets </h2>
+    <!--Need to modify-->
+  <form (ngSubmit)="filtering(f)" #f="ngForm">
+      <label for="statusFilter">Filter requests by ticket status</label>
+      <select name="statusFilter" id="statusFilter" ngModel>
+        <option value="none">none</option>
+        <option value="pending">Pending</option>
+        <option value="approved">Approved</option>
+        <option value="denied">Denied</option>
+      </select>
+      <button type="submit">Search</button>
+  </form>
+      <table class="table table-striped table-hover">
+          <thead class="table-light">
+              <tr>
+                  <th>Type of Reimbursement</th>
+                  <th>Amount to be Reimbursed</th>
+                  <th>Description</th>
+                  <th>Receipt Document or Image</th>
+                  <th>Timestamp</th>
+                  <th>Status</th>
+                  <th></th>
+              </tr>
+          </thead>
+          <tbody>
+            <ng-container  *ngIf="filter === 'none'; else other">
+                <tr *ngFor="let req of requests">
+                    <td>{{req.id}}</td>
+                    <td>{{req.type}}</td>
+                    <td>{{req.description}}</td>
+                    <td>$ {{req.amount.toFixed(2)}}</td>
+                    <td>{{formatDate(req.time)}}</td>
+                    <td>{{req.status}}</td>
+                </tr>  
+            </ng-container>       
+        </tbody>
+      </table>
+  </div>
+
+  <ng-template #other>
+    <ng-container *ngFor="let req of requests">
+        <tr *ngIf="req.status === filter">
+                <td>{{req.id}}</td>
+                <td>{{req.type}}</td>
+                <td>{{req.description}}</td>
+                <td>$ {{req.amount.toFixed(2)}}</td>
+                <td>{{formatDate(req.time)}}</td>
+                <td>{{req.status}}</td>
+        </tr>
+    </ng-container>
+  </ng-template>
+
+    
+<!-- <tr>
+                  <td>Food</td>
+                  <td>$25</td>
+                  <td>Dinner</td>
+                  <td>restaurant.png</td>
+                  <td>05/21/20</td>
+                  <td>Approved</td>
+                  <td>Edit | Details | Delete </td>
+              </tr>
+              <tr>
+                  <td>Travel</td>
+                  <td>$500</td>
+                  <td>Flight to Conference- Business Class</td>
+                  <td>airlines.png</td>
+                  <td>08/14/21</td>
+                  <td>Approved</td>
+                  <td>Edit | Details | Delete </td>
+              </tr>
+              <tr>
+                  <td>Lodging</td>
+                  <td>$500</td>
+                  <td>Hotel</td>
+                  <td>receipt.jpg</td>
+                  <td>07/10/20</td>
+                  <td>Approved</td>
+                  <td>Edit | Details | Delete </td>
+              </tr>
+              <tr>
+                  <td>Other</td>
+                  <td>$1,440</td>
+                  <td>Laptop</td>
+                  <td>apple.png</td>
+                  <td>6/14/21</td>
+                  <td>Rejected</td>
+                  <td>Edit | Details | Delete </td>
+              </tr> -->
