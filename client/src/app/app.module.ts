@@ -15,6 +15,7 @@ import { newTicket } from './ticketForm/ticketForm.component';
 import { MyRequestsComponent } from './my-requests/my-requests.component';
 import { TicketComponent } from './ticket/ticket.component';
 import { EmployeeTicketViewComponent } from './employee-ticket-view/employee-ticket-view.component';
+
 const routes:Routes = [
   {path: '', component: HomeComponent, canActivate:[AuthGuard]},
   {path: 'home', component:HomeComponent, canActivate:[AuthGuard]},
@@ -32,6 +33,7 @@ const routes:Routes = [
     HomeComponent,
     routingComponents,
     NavbarComponent,
+    TicketComponent,
     MyRequestsComponent,
     EmployeeTicketViewComponent
   ],

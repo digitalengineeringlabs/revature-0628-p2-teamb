@@ -4,6 +4,7 @@ import { EmployeeTicketView, EmployeeTicketViewComponent } from './employee-tick
 import { Ticket, TicketComponent } from './ticket/ticket.component';
 import { newTicket } from './ticketForm/ticketForm.component';
 
+
 const routes: Routes = [
   { path:'ticket', component: newTicket}, 
   { path: 'tickets', component: Ticket},
