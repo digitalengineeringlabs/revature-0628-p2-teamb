@@ -3,7 +3,7 @@
     <table class="table table-bordered table-striped table-dark">
       <thead>
       <tr>
-        <th>View</th>
+       
         <th>ticket id</th>
         <th>amount</th>
         <th>description</th>
@@ -15,14 +15,14 @@
       </thead>
       <tbody>
         <tr *ngFor="let ticket of tickets"> 
-          <td (click)="viewSpecificTicket(ticket)">View</td>   
-          <td (click)="viewSpecificTicket(ticket)"><span>{{ticket.id}}</span></td>
-          <td (click)="viewSpecificTicket(ticket)"><span>{{ticket.amount}}</span></td>
-          <td (click)="viewSpecificTicket(ticket)"><span>{{ticket.description}}</span></td>
-          <td (click)="viewSpecificTicket(ticket)"><span>{{ticket.status}}</span></td>
-          <td (click)="viewSpecificTicket(ticket)"><span>{{ticket.time}}</span></td>
-          <td (click)="viewSpecificTicket(ticket)"><span>{{ticket.type}}</span></td>
-          <td (click)="viewSpecificTicket(ticket)"><span>{{ticket.employee_id}}</span></td>
+       
+          <td><span>{{ticket.id}}</span></td>
+          <td><span>{{ticket.amount}}</span></td>
+          <td><span>{{ticket.description}}</span></td>
+          <td><span>{{ticket.status}}</span></td>
+          <td><span>{{ticket.time}}</span></td>
+          <td><span>{{ticket.type}}</span></td>
+          <td><span>{{ticket.employee_id}}</span></td>
         </tr>
       </tbody>
     </table>

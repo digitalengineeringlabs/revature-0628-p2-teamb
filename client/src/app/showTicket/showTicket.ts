@@ -12,10 +12,12 @@ export class ShowTicket implements OnInit {
     ticket = {};
 
     constructor(private http:HttpClient, private route:ActivatedRoute, 
-        private router:Router) { }
+        private router:Router) { 
+            
+        }
 
     ngOnInit() {
-        this.ticket = this.route.snapshot.params;
+        //this.ticket = this.router.getCurrentNavigation()?.extras.state;
     }
   
 

@@ -3,13 +3,13 @@ import { RouterModule, Routes } from '@angular/router';
 import { EmployeeTicketView, EmployeeTicketViewComponent } from './employee-ticket-view/employee-ticket-view.component';
 import { Ticket, TicketComponent } from './ticket/ticket.component';
 import { newTicket } from './ticketForm/ticketForm.component';
-import { TicketComponent } from './ticket/ticket.component';
 import { ShowTicket } from './showTicket/showTicket';
 const routes: Routes = [
   { path:'ticket', component: newTicket}, 
   { path: 'tickets', component: Ticket},
   { path: 'financeManager', component: TicketComponent},
-  { path: 'employeeTicketView', component: EmployeeTicketViewComponent}
+  { path: 'employeeTicketView', component: EmployeeTicketViewComponent},
+  { path: 'showticket', component: ShowTicket},
 ];
 
 @NgModule({
@@ -17,4 +17,4 @@ const routes: Routes = [
   exports: [RouterModule]
 })
 export class AppRoutingModule { }
-export const routingComponents = [newTicket];
+export const routingComponents = [newTicket, ShowTicket];

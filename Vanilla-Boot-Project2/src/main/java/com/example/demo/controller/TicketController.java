@@ -25,19 +25,19 @@ public class TicketController {
 		return service.getTickets();
 	}
 
-	@CrossOrigin(origins="http://localhost:4200")
-	@GetMapping("/home")
-	public List<Ticket> getEmpTickets() {
-		List<Ticket> allTickets = service.getTickets();
-		List<Ticket> empTickets = null;
-		for(int counter = 0; counter < allTickets.size(); counter++) {
-			Ticket tic = allTickets.get(counter);
-			if()
-		}
-		
-		
-		
-		return empTickets;
-	}
+//	@CrossOrigin(origins="http://localhost:4200")
+//	@GetMapping("/home")
+//	public List<Ticket> getEmpTickets() {
+//		List<Ticket> allTickets = service.getTickets();
+//		List<Ticket> empTickets = null;
+//		for(int counter = 0; counter < allTickets.size(); counter++) {
+//			Ticket tic = allTickets.get(counter);
+//			if()
+//		}
+//		
+//		
+//		
+//		return empTickets;
+//	}
 	
 }

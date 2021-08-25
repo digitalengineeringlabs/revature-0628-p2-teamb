@@ -2,6 +2,7 @@ import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { NgForm } from '@angular/forms';
 import { Router } from '@angular/router';
+import { Ticket } from '../ticket/ticket.component';
 
 @Component({
   selector: 'app-employee-ticket-view',
@@ -39,7 +40,15 @@ export class EmployeeTicketViewComponent implements OnInit {
     let d = new Date(date);
     return d.getMonth() + "/" + d.getDate() + "/" + d.getFullYear();
   }
+
+
+  viewSpecificTicket(ticket: EmployeeTicketView){
+    console.log(ticket);
+    this.router.navigate(['showticket', { state: ticket}]);
+  }
 }
+
+
 
 
 export class EmployeeTicketView {

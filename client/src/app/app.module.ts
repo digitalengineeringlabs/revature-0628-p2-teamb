@@ -3,7 +3,6 @@ import { FormsModule } from '@angular/forms';
 import { BrowserModule } from '@angular/platform-browser';
 import { Routes, RouterModule } from '@angular/router';
 import { HttpClientModule } from '@angular/common/http';
-import { TicketComponent } from './ticket/ticket.component';
 
 import { AppRoutingModule, routingComponents } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -32,7 +31,7 @@ const routes:Routes = [
     HomeComponent,
     routingComponents,
     NavbarComponent,
-    TicketComponent
+    TicketComponent,
     MyRequestsComponent,
     EmployeeTicketViewComponent
   ],

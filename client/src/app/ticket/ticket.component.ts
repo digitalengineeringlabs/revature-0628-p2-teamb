@@ -34,10 +34,7 @@ export class TicketComponent implements OnInit {
     this.getTickets();
   }
 
-  viewSpecificTicket(ticket:Ticket){
-    const ticketID = ticket.id;
-    this.router.navigate(['tickets/' + ticketID]);
-  }
+  
 
   getTickets(){
     this.httpClient.get<any>('http://localhost:8080/tickets').subscribe(
