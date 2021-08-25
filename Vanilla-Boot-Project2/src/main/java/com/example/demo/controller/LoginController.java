@@ -21,14 +21,10 @@ public class LoginController {
 	@CrossOrigin(origins = "http://localhost:4200")
 	@PostMapping(consumes="application/json", produces="application/json")
 	public ResponseEntity<Object> getEmployeeLogin(@RequestBody Employee employee) {
-		System.out.println(employee.getEmail());
-		System.out.println(employee.getPassword());
-		Employee e = manager.findLogin(employee.getEmail(), employee.getPassword());
-		Employee temp = new Employee();
-		temp.setId(e.getId());
-		temp.setRole(e.getRole());
-		return new ResponseEntity<>(temp, HttpStatus.CREATED);
-
+		Employee employ = manager.findLogin(employee.getEmail(), employee.getPassword());
+		if(employ != null)
+			return new ResponseEntity<>("{\"id\":" + employ.getId() + ", \"role\": \"" + employ.getRole() + "\" }", HttpStatus.CREATED);
+		return new ResponseEntity<>(null, HttpStatus.CREATED);
 	}
 	
 }

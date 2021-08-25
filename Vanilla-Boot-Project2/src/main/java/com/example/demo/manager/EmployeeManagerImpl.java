@@ -16,20 +16,20 @@ public class EmployeeManagerImpl implements EmployeeManager {
 	
 	@Override
 	public Employee findLogin(String email, String password) {
-		Employee e = dao.findLogin(email);
-		if(e != null && e.getPassword().equals(password)) {
-			return e;
+		Employee employee = dao.findLogin(email);
+		if(employee != null && employee.getPassword().equals(password)) {
+			return employee;
 		}
 		return null;
 	}
 
 	@Override
 	public Employee getAccount(int id) {
-		Optional<Employee> e = dao.findById(id);
-		if(!e.isPresent()) {
+		Optional<Employee> employee = dao.findById(id);
+		if(!employee.isPresent()) {
 			return null;
 		} else {
-			return e.get();
+			return employee.get();
 		}
 		
 	}

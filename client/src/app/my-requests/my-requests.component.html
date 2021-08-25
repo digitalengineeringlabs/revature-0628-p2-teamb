@@ -1,4 +1,15 @@
 <div>
+    <label for="filter">Filter: </label>
+    <form (ngSubmit)="filtered(f)" #f="ngForm">
+        <select id="filter" name="filter" ngModel>
+            <option value="none">none</option>
+            <option value="approved">approved</option>
+            <option value="denied">denied</option>
+            <option value="pending">pending</option>
+        </select>
+        <button type="submit">Filter</button>
+    </form>
+
     <table>
         <thead>
             <tr>
@@ -10,16 +21,30 @@
                 <th>Status</th>
             </tr>
         </thead>
-        <tbody>
-            <tr *ngFor="let req of requests">
+        <tbody *ngIf="filter === 'none'; else other">
+                <tr *ngFor="let req of requests">
+                    <td>{{req.id}}</td>
+                    <td>{{req.type}}</td>
+                    <td>{{req.description}}</td>
+                    <td>$ {{req.amount.toFixed(2)}}</td>
+                    <td>{{formatDate(req.time)}}</td>
+                    <td>{{req.status}}</td>
+                </tr>         
+        </tbody>
+    </table>
+
+</div>
+
+
+<ng-template #other>
+    <tbody *ngFor="let req of requests">
+        <tr *ngIf="req.status === filter">
                 <td>{{req.id}}</td>
                 <td>{{req.type}}</td>
                 <td>{{req.description}}</td>
                 <td>$ {{req.amount.toFixed(2)}}</td>
                 <td>{{formatDate(req.time)}}</td>
                 <td>{{req.status}}</td>
-            </tr>
-        </tbody>
-    </table>
-
-</div>
+        </tr>
+    </tbody>
+</ng-template>

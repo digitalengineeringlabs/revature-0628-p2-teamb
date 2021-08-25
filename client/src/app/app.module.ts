@@ -12,13 +12,15 @@ import { HomeComponent } from './home/home.component';
 import { AuthGuard } from './auth.guard';
 import { newTicket } from './ticketForm/ticketForm.component';
 import { MyRequestsComponent } from './my-requests/my-requests.component';
+import { TicketComponent } from './ticket/ticket.component';
 
 const routes:Routes = [
   {path: '', component: HomeComponent, canActivate:[AuthGuard]},
   {path: 'home', component:HomeComponent, canActivate:[AuthGuard]},
   {path: 'ticketform', component:newTicket},
   {path: 'login', component: LoginComponent},
-  {path: 'mytickets', component:MyRequestsComponent}
+  {path: 'mytickets', component:MyRequestsComponent},
+  {path: 'viewAllTickets', component:TicketComponent}
 ]
 
 @NgModule({

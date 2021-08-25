@@ -24,9 +24,9 @@ public class getTicketController {
 	@CrossOrigin("http://localhost:4200")
 	@PostMapping(consumes="application/json", produces="application/json")
 	public ResponseEntity<Object> getMyTickets(@RequestBody Map<String, Object> map) {
-		Employee e = manager.getAccount((int)map.get("id"));
-		if(e != null)
-			return new ResponseEntity<>(e.getTickets(), HttpStatus.CREATED);
+		Employee employee = manager.getAccount((int)map.get("id"));
+		if(employee != null)
+			return new ResponseEntity<>(employee.getTickets(), HttpStatus.CREATED);
 		return new ResponseEntity<>(null, HttpStatus.CREATED);
 	}
 }
