@@ -56,3 +56,17 @@ body{
 .nav-item {
     color: white;
 }
+
+.btn {
+    outline: none;
+}
+
+.btn-primary {
+    background-color: blue;
+    outline:rgba(0, 0, 0, 0.363);
+    border-color: blue;
+}
+
+.bg-primary {
+    background-color: blue;
+}
