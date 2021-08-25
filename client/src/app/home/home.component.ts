@@ -17,5 +17,5 @@ export class HomeComponent implements OnInit {
     localStorage.clear();
     this.router.navigate(['login']);
   }
-
+  title = "Employee Reimbursement System";
 }

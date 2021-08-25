@@ -10,6 +10,7 @@ import { AppComponent } from './app.component';
 import { LoginComponent } from './login/login.component';
 import { HomeComponent } from './home/home.component';
 import { AuthGuard } from './auth.guard';
+import { NavbarComponent } from './navbar/navbar.component';
 
 const routes:Routes = [
   {path: '', component: HomeComponent, canActivate:[AuthGuard]},
@@ -22,7 +23,8 @@ const routes:Routes = [
     AppComponent,
     LoginComponent,
     HomeComponent,
-    routingComponents
+    routingComponents,
+    NavbarComponent,
   ],
   imports: [
     BrowserModule,
