@@ -32,6 +32,7 @@ const routes:Routes = [
     HomeComponent,
     routingComponents,
     NavbarComponent,
+    TicketComponent,
     MyRequestsComponent,
     EmployeeTicketViewComponent
   ],
