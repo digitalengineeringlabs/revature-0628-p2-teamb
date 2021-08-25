@@ -1,5 +1,7 @@
 package com.example.demo.controller;
 
+import java.util.Map;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -8,23 +10,23 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
+
 import com.example.demo.manager.EmployeeManager;
 import com.example.demo.model.Employee;
 
 @RestController
-@RequestMapping(path="/login")
-public class LoginController {
-
-	@Autowired
-	private EmployeeManager manager;
+@RequestMapping(path="/getmytickets")
+public class getTicketController {
 	
-	@CrossOrigin(origins = "http://localhost:4200")
+	@Autowired
+	EmployeeManager manager;
+	
+	@CrossOrigin("http://localhost:4200")
 	@PostMapping(consumes="application/json", produces="application/json")
-	public ResponseEntity<Object> getEmployeeLogin(@RequestBody Employee employee) {
-		Employee employ = manager.findLogin(employee.getEmail(), employee.getPassword());
-		if(employ != null)
-			return new ResponseEntity<>("{\"id\":" + employ.getId() + ", \"role\": \"" + employ.getRole() + "\" }", HttpStatus.CREATED);
+	public ResponseEntity<Object> getMyTickets(@RequestBody Map<String, Object> map) {
+		Employee employee = manager.getAccount((int)map.get("id"));
+		if(employee != null)
+			return new ResponseEntity<>(employee.getTickets(), HttpStatus.CREATED);
 		return new ResponseEntity<>(null, HttpStatus.CREATED);
 	}
-	
 }

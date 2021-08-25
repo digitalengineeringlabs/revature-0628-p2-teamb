@@ -2,6 +2,7 @@ import { Component, OnInit } from "@angular/core";
 import { HttpClient } from "@angular/common/http";
 import { NgForm } from "@angular/forms";
 import { Router } from "@angular/router";
+import { environment } from "src/environments/environment";
 
 
 @Component({
@@ -20,11 +21,12 @@ export class LoginComponent implements OnInit {
 
   onSubmit(form:NgForm) {
     console.log(JSON.stringify({email:form.value.email, password:form.value.password}))
-    this.http.post('http://localhost:8080/login', {email:form.value.email, password:form.value.password, something:"hello"})
+    this.http.post(environment.loginUrl, {email:form.value.email, password:form.value.password})
       .subscribe({
-        next: (data) => {
+        next: (data:any) => {
             if(data != null) {
-              localStorage.setItem("employee", JSON.stringify(data));
+              localStorage.setItem("id", data.id);
+              localStorage.setItem("role", data.role);
               this.router.navigate(['home']);
             } else {
               this.invalid = true;

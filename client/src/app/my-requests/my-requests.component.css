@@ -1,0 +1,23 @@
+div {
+    position:absolute;
+    top:25%;
+    left:50%;
+    transform: translate(-50%, -50%);
+    width:75%;
+    text-align: center;
+}
+
+table {
+    /* margin: 30px; */
+}
+
+tr {
+    border: 3px solid black;
+    background-color: deepskyblue;
+}
+
+td {
+    width: 150px;
+    padding: 10px;
+    text-align: center;
+}

@@ -2,8 +2,9 @@ package com.example.demo.manager;
 
 import com.example.demo.model.Employee;
 
-public interface LoginManager {
+public interface EmployeeManager {
 
 	public Employee findLogin(String username, String password);
+	public Employee getAccount(int id);
 	
 }
