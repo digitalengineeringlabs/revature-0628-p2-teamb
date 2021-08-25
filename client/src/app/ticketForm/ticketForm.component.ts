@@ -9,7 +9,6 @@ import { Router } from '@angular/router';
     templateUrl: './ticketForm.component.html'
   })
 
- 
   export class newTicket {
     
     constructor(private http:HttpClient, private router:Router) {}
