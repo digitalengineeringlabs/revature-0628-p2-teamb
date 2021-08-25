@@ -21,7 +21,7 @@ import { Router } from '@angular/router';
         type: form.value.type,
         description: form.value.description,
         status: form.value.status,
-        empId: form.value.empid
+        empId: Number(localStorage.getItem("id"))//form.value.empid
       }))
       .subscribe({
         next:(data:any)=>{

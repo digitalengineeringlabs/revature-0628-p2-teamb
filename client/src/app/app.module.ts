@@ -11,15 +11,19 @@ import { LoginComponent } from './login/login.component';
 import { HomeComponent } from './home/home.component';
 import { AuthGuard } from './auth.guard';
 import { NavbarComponent } from './navbar/navbar.component';
-
-// const routes:Routes = [
-//   {path: '', component: HomeComponent, canActivate:[AuthGuard]},
-//   {path: 'home', component:HomeComponent, canActivate:[AuthGuard]},
-//   {path: 'ticketform', component:newTicket},
-//   {path: 'login', component: LoginComponent},
-//   {path: 'mytickets', component:MyRequestsComponent},
-//   {path: 'viewAllTickets', component:TicketComponent}
-// ]
+import { newTicket } from './ticketForm/ticketForm.component';
+import { MyRequestsComponent } from './my-requests/my-requests.component';
+import { TicketComponent } from './ticket/ticket.component';
+import { EmployeeTicketViewComponent } from './employee-ticket-view/employee-ticket-view.component';
+const routes:Routes = [
+  {path: '', component: HomeComponent, canActivate:[AuthGuard]},
+  {path: 'home', component:HomeComponent, canActivate:[AuthGuard]},
+  {path: 'ticketform', component:newTicket},
+  {path: 'login', component: LoginComponent},
+  {path: 'mytickets', component:MyRequestsComponent},
+  {path: 'viewAllTickets', component:TicketComponent},
+  {path: 'employeeTicketView', component:EmployeeTicketViewComponent}
+]
 
 @NgModule({
   declarations: [
@@ -28,6 +32,8 @@ import { NavbarComponent } from './navbar/navbar.component';
     HomeComponent,
     routingComponents,
     NavbarComponent,
+    MyRequestsComponent,
+    EmployeeTicketViewComponent
   ],
   imports: [
     BrowserModule,

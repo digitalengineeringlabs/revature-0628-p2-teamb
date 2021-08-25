@@ -1,19 +1,7 @@
 import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
+import { NgForm } from '@angular/forms';
 import { Router } from '@angular/router';
-
-export class EmployeeTicketView {
-  /*constructor(
-    public id: number,
-    public amount: number,
-    public description: string,
-    public status: string,
-    public time: Date,
-    public type: string,
-    public employee_id: number
-  ) {
-  }*/
-}
 
 @Component({
   selector: 'app-employee-ticket-view',
@@ -22,19 +10,59 @@ export class EmployeeTicketView {
 })
 export class EmployeeTicketViewComponent implements OnInit {
   
+  requests:EmployeeTicketView[] = [];
+  filter:string = "none";
+
   constructor(private http:HttpClient, private router:Router) {}
   
   ngOnInit(): void {
-    //this.getEmployeeTickets();
+    this.getEmployeeTickets();
   }
 
-/*
   getEmployeeTickets(){
-    this.httpClient.get<any>('http://localhost:8080/employeeTicketView').subscribe(
-      response => {
-        console.log(response);
+    this.http.post('http://localhost:8080/getmytickets', {id:Number(localStorage.getItem("id"))}).subscribe({
+      next: (data:any) => {
+        console.log(data);
         //this.employeeTickets = response;
+        this.requests = data;
       }
-    );
-  }*/
+    });
+  }
+
+  filtering(form:NgForm) {
+    console.log(form.value.statusFilter);
+    this.filter = form.value.statusFilter;
+  }
+
+
+  formatDate(date:any) {
+    let d = new Date(date);
+    return d.getMonth() + "/" + d.getDate() + "/" + d.getFullYear();
+  }
+}
+
+
+export class EmployeeTicketView {
+  id:number
+    type:string
+    description:string
+    amount:number
+    time:Date
+    status:string
+  
+    constructor(
+      id:number,
+      type:string,
+      description:string,
+      amount:number,
+      time:Date,
+      status:string
+    ) {
+      this.id = id;
+      this.type = type;
+      this.description = description;
+      this.amount = amount;
+      this.time = time;
+      this.status = status;
+    }
 }

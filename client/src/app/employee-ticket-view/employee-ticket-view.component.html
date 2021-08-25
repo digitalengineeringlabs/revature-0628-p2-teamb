@@ -2,14 +2,15 @@
   <div class="jumbotron card">
     <h2>View Past Tickets </h2>
     <!--Need to modify-->
-  <form action="#" method="POST">
+  <form (ngSubmit)="filtering(f)" #f="ngForm">
       <label for="statusFilter">Filter requests by ticket status</label>
-      <select name="statusFilter" id="status">
+      <select name="statusFilter" id="statusFilter" ngModel>
+        <option value="none">none</option>
         <option value="pending">Pending</option>
         <option value="approved">Approved</option>
-        <option value="rejected">Rejected</option>
+        <option value="denied">Denied</option>
       </select>
-      <input type="submit" value="Search">
+      <button type="submit">Search</button>
   </form>
       <table class="table table-striped table-hover">
           <thead class="table-light">
@@ -24,7 +25,35 @@
               </tr>
           </thead>
           <tbody>
-              <tr>
+            <ng-container  *ngIf="filter === 'none'; else other">
+                <tr *ngFor="let req of requests">
+                    <td>{{req.id}}</td>
+                    <td>{{req.type}}</td>
+                    <td>{{req.description}}</td>
+                    <td>$ {{req.amount.toFixed(2)}}</td>
+                    <td>{{formatDate(req.time)}}</td>
+                    <td>{{req.status}}</td>
+                </tr>  
+            </ng-container>       
+        </tbody>
+      </table>
+  </div>
+
+  <ng-template #other>
+    <ng-container *ngFor="let req of requests">
+        <tr *ngIf="req.status === filter">
+                <td>{{req.id}}</td>
+                <td>{{req.type}}</td>
+                <td>{{req.description}}</td>
+                <td>$ {{req.amount.toFixed(2)}}</td>
+                <td>{{formatDate(req.time)}}</td>
+                <td>{{req.status}}</td>
+        </tr>
+    </ng-container>
+  </ng-template>
+
+    
+<!-- <tr>
                   <td>Food</td>
                   <td>$25</td>
                   <td>Dinner</td>
@@ -59,36 +88,4 @@
                   <td>6/14/21</td>
                   <td>Rejected</td>
                   <td>Edit | Details | Delete </td>
-              </tr>
-          </tbody>
-  
-      </table>
-  </div>
-    <div class="jumbotron card">
-      <h5 class="card-header">Ticket</h5>
-      <div class="card-body">
-        <div>
-          <p class="card-title"><strong>Employee Name: </strong><!--{{employeeTicketView.employeeName}}--></p>
-          <p><strong>Reimbursement Type: </strong> <!--{{employeeTicketView.reimbursementType}}--></p>
-          <p><strong>Amount Requested:</strong> <!--${{employeeTicketView.amount}}--></p>
-          <p><strong>Description:</strong> <!--{{employeeTicketView.description}}--></p>
-      
-          <p><strong>Timestamp: </strong><!--{{employeeTicketView.timestamp}}--></p>
-          <p><strong>Status:</strong> <!--{{employeeTicketView.status}}--></p>
-        </div>
-        <div>
-          <!--<p>Image: <img [src]="image" alt="{{file}}"></p>-->
-        </div>
-      <button class="btn bg-secondary">Approve</button>
-      <button class="btn bg-secondary text-dark">Deny</button>
-      </div>
-      <!--If ticket is successfully created-->
-      <div class="alert alert-success" role="alert" ngIf="Approve()">
-        Ticket successfully created!
-      </div>
-    </div>
-  </div>
-
-  
-
-    
+              </tr> -->
