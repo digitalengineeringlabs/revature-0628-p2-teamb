@@ -43,6 +43,7 @@ import { Router } from '@angular/router';
       protected desription: string,
       protected amount: number,
       protected status: string,
-      protected empid: number
+      protected empid: number,
+      protected employee_id: number,
     ) {}
   }

@@ -33,7 +33,7 @@ export class TicketComponent implements OnInit {
   }
 
   getTickets(){
-    this.httpClient.get<any>('http://localhost:4200/Alltickets').subscribe(
+    this.httpClient.get<any>('http://localhost:9001/tickets').subscribe(
       response => {
         console.log(response);
         this.tickets = response;

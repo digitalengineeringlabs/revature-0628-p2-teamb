@@ -1,11 +1,12 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { newTicket } from './ticketForm/ticketForm.component';
+import { HomeComponent } from './home/home.component';
 import { TicketComponent } from './ticket/ticket.component';
+
 const routes: Routes = [
-  { path:'ticket', component: newTicket},
-  {path: 'tickets', component: TicketComponent}
-  
+  {path: 'home', component: HomeComponent},
+  {path: 'tickets', component: TicketComponent},
+  {path: '', component: HomeComponent}
 ];
 
 @NgModule({
@@ -13,4 +14,3 @@ const routes: Routes = [
   exports: [RouterModule]
 })
 export class AppRoutingModule { }
-export const routingComponents = [newTicket];
