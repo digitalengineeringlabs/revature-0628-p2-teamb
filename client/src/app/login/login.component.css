@@ -16,7 +16,8 @@ label {
 
     border: 3px solid black;
     border-radius: 10px;
-    background-color: cyan
+    background-color: cyan;
+    opacity: 0.9;
 }
 
 form {
