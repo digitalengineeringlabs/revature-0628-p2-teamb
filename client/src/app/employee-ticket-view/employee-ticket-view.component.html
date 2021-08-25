@@ -1,0 +1,28 @@
+<div class="container">
+    <div class="card">
+      
+      <h5 class="card-header">Ticket</h5>
+      <div class="card-body">
+        <div>
+          <p class="card-title">Employee Name: <!--{{employeeTicketView.employeeName}}--></p>
+          <p>Reimbursement Type: <!--{{employeeTicketView.reimbursementType}}--></p>
+          <p>Amount Requested: <!--${{employeeTicketView.amount}}--></p>
+          <p>Description: <!--{{employeeTicketView.description}}--></p>
+      
+          <p>Timestamp: <!--{{employeeTicketView.timestamp}}--></p>
+          <p>Status: <!--{{employeeTicketView.status}}--></p>
+        </div>
+        <div>
+          <!--<p>Image: <img [src]="image" alt="{{file}}"></p>-->
+        </div>
+        
+  
+      <button class="btn btn-primary">Approve</button>
+      <button class="btn btn-secondary">Deny</button>
+      </div>
+      <div class="alert alert-success" role="alert" ngIf="Approve()">
+        Ticket successfully created!
+      </div>
+    </div>
+  </div>
+    
