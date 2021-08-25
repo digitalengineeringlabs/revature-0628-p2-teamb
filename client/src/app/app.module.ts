@@ -11,7 +11,6 @@ import { LoginComponent } from './login/login.component';
 import { HomeComponent } from './home/home.component';
 import { AuthGuard } from './auth.guard';
 import { NavbarComponent } from './navbar/navbar.component';
-import { FooterComponent } from './footer/footer.component';
 
 const routes:Routes = [
   {path: '', component: HomeComponent, canActivate:[AuthGuard]},
@@ -26,7 +25,6 @@ const routes:Routes = [
     HomeComponent,
     routingComponents,
     NavbarComponent,
-    FooterComponent
   ],
   imports: [
     BrowserModule,
