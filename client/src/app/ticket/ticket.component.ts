@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { HttpClient, HttpClientModule } from '@angular/common/http';
+import { Router, ActivatedRoute, ParamMap } from "@angular/router";
 
 
 export class Ticket {
@@ -25,15 +26,21 @@ export class TicketComponent implements OnInit {
   tickets: Ticket[] | undefined;
 
   constructor(
-    private httpClient: HttpClient
+    private httpClient: HttpClient,
+    private router:Router
   ) { }
 
   ngOnInit(): void {
     this.getTickets();
   }
 
+  viewSpecificTicket(ticket:Ticket){
+    const ticketID = ticket.id;
+    this.router.navigate(['tickets/' + ticketID]);
+  }
+
   getTickets(){
-    this.httpClient.get<any>('http://localhost:4200/Alltickets').subscribe(
+    this.httpClient.get<any>('http://localhost:8080/Alltickets').subscribe(
       response => {
         console.log(response);
         this.tickets = response;
