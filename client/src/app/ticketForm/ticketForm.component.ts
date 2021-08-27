@@ -16,7 +16,7 @@ import { Router } from '@angular/router';
 //  This method still needs to be redone
     onSubmit(form:NgForm) {      
       console.log(form);
-      this.http.post("http://localhost:8080/tickets", ({
+      this.http.post("http://localhost:8080/tickets/new", ({
         amount: form.value.amount,
         type: form.value.type,
         description: form.value.description,
@@ -42,6 +42,7 @@ import { Router } from '@angular/router';
       protected desription: string,
       protected amount: number,
       protected status: string,
-      protected empid: number
+      protected empid: number,
+      protected employee_id: number,
     ) {}
   }

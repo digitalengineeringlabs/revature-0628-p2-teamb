@@ -16,7 +16,7 @@ import com.example.demo.manager.TicketManager;
 import com.example.demo.model.Ticket;
 
 @RestController
-@RequestMapping(path="/tickets")
+@RequestMapping(path="/tickets/new")
 public class NewTicketController {
 
 	private static final Logger logger = LogManager.getLogger(NewTicketController.class.getName());

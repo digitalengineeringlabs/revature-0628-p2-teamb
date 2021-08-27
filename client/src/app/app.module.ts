@@ -4,7 +4,6 @@ import { BrowserModule } from '@angular/platform-browser';
 import { Routes, RouterModule } from '@angular/router';
 import { HttpClientModule } from '@angular/common/http';
 
-
 import { AppRoutingModule, routingComponents } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { LoginComponent } from './login/login.component';
@@ -15,6 +14,7 @@ import { newTicket } from './ticketForm/ticketForm.component';
 import { MyRequestsComponent } from './my-requests/my-requests.component';
 import { TicketComponent } from './ticket/ticket.component';
 import { EmployeeTicketViewComponent } from './employee-ticket-view/employee-ticket-view.component';
+import { ShowTicket } from './showTicket/showTicket';
 const routes:Routes = [
   {path: '', component: HomeComponent, canActivate:[AuthGuard]},
   {path: 'home', component:HomeComponent, canActivate:[AuthGuard]},
