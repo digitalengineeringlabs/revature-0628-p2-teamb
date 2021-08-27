@@ -1,4 +1,15 @@
 <div class="container">
+
+  <form (ngSubmit)="filtering(f)" #f="ngForm">
+    <label for="statusFilter">Filter requests by ticket status</label>
+    <select name="statusFilter" id="statusFilter" ngModel>
+      <option value="none">none</option>
+      <option value="pending">Pending</option>
+      <option value="approved">Approved</option>
+      <option value="denied">Denied</option>
+    </select>
+    <button type="submit">Search</button>
+  </form>
     <table class="table table-bordered table-striped table-dark">
       <thead>
       <tr>
@@ -9,17 +20,39 @@
         <th>status</th>
         <th>time</th>
         <th>type</th>
+        <th>Actions</th>
       </tr>
       </thead>
       <tbody>
-      <tr *ngFor="let ticket of tickets">
+      <tr *ngFor="let ticket of tickets; let i = index"
+        [class.active]="i == currentIndex"
+        (click)="setActiveTutorial(ticket, i)"
+        >
         <td><span>{{ticket.id}}</span></td>
         <td><span>{{ticket.amount}}</span></td>
         <td><span>{{ticket.description}}</span></td>
         <td><span>{{ticket.status}}</span></td>
         <td><span>{{ticket.time}}</span></td>
         <td><span>{{ticket.type}}</span></td>
+
+       <button class="button" (click)="updateApproved(ticket.status)"> Approve</button>
+       <button class="button" (click)="updateDenied(ticket.status)"> Deny</button>
+       <button class="button" (click)="updatePending(ticket.status)"> Pending</button>
       </tr>
       </tbody>
     </table>
   </div>
+
+  
+  <ng-template #other>
+    <ng-container *ngFor="let ticket of tickets">
+      <tr *ngIf="ticket.status === filter">
+        <td><span>{{ticket.id}}</span></td>
+        <td><span>{{ticket.amount}}</span></td>
+        <td><span>{{ticket.description}}</span></td>
+        <td><span>{{ticket.status}}</span></td>
+        <td><span>{{formatDate(ticket.time)}}</span></td>
+        <td><span>{{ticket.type}}</span></td>
+      </tr>
+    </ng-container>
+  </ng-template>
