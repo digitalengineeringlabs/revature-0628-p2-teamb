@@ -35,7 +35,7 @@
           <tbody>
             <ng-container  *ngIf="filter === 'none'; else other">
                 <tr *ngFor="let req of requests">
-                    <td (click)="viewSpecificTicket(req)">View</td>
+                    <td> <button class="btn btn-secondary" (click)="viewSpecificTicket(req)">View</button></td>
                     <td>{{req.id}}</td>
                     <td>{{req.type}}</td>
                     <td>{{req.description}}</td>
@@ -51,7 +51,7 @@
   <ng-template #other>
     <ng-container *ngFor="let req of requests">
         <tr *ngIf="req.status === filter">
-                <td (click)="viewSpecificTicket(req)">View</td>
+                <td><button class="btn btn-secondary" (click)="viewSpecificTicket(req)">View</button></td>
                 <td>{{req.id}}</td>
                 <td>{{req.type}}</td>
                 <td>{{req.description}}</td>
