@@ -1,6 +1,13 @@
-<div class="container">
+
+    <div class="row justify-content-center">
+        <div class="col-lg-5">
+            <showticket></showticket>
+        </div>
+
+    </div>
+
   <div class="jumbotron card">
-    <h2>View Past Tickets </h2>
+    <h2 (click)="getScopeInfo()">View Past Tickets </h2>
     <!--Need to modify-->
   <form (ngSubmit)="filtering(f)" #f="ngForm">
       <label for="statusFilter">Filter requests by ticket status</label>
@@ -27,21 +34,23 @@
           <tbody>
             <ng-container  *ngIf="filter === 'none'; else other">
                 <tr *ngFor="let req of requests">
+                    <td (click)="viewSpecificTicket(req)">View</td>
                     <td>{{req.id}}</td>
                     <td>{{req.type}}</td>
                     <td>{{req.description}}</td>
                     <td>$ {{req.amount.toFixed(2)}}</td>
                     <td>{{formatDate(req.time)}}</td>
                     <td>{{req.status}}</td>
-                </tr>  
-            </ng-container>       
+                </tr>
+            </ng-container>
         </tbody>
       </table>
-  </div>
+
 
   <ng-template #other>
     <ng-container *ngFor="let req of requests">
         <tr *ngIf="req.status === filter">
+                <td (click)="viewSpecificTicket(req)">View</td>
                 <td>{{req.id}}</td>
                 <td>{{req.type}}</td>
                 <td>{{req.description}}</td>

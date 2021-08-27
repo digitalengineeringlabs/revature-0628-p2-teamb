@@ -70,3 +70,14 @@ body{
 .bg-primary {
     background-color: blue;
 }
+
+.specificTicket {
+    list-style: none;
+}
+
+.sticketCont {
+    border-radius: 27px;
+    background-color: aliceblue;
+    padding: 20px;
+    margin-bottom: 15px;
+}

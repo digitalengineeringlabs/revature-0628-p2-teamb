@@ -3,6 +3,8 @@ package com.example.demo.manager;
 import java.util.Date;
 import java.util.Optional;
 
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -14,6 +16,8 @@ import com.example.demo.model.Ticket;
 @Service
 public class TicketManagerImpl implements TicketManager {
 
+	private static final Logger logger = LogManager.getLogger(TicketManagerImpl.class.getName());
+	
 	@Autowired
 	private TicketDAO dao;
 	
@@ -22,44 +26,29 @@ public class TicketManagerImpl implements TicketManager {
 	
 	@Override
 	public Optional<Ticket> postNewTicket(Ticket ticket) {
-		// TODO Auto-generated method stub
-		
 //		data being written to ticket is changed from 
 //		what is confirmed to be sending on the front end
 		
-		
 		try {
-			System.out.println(ticket.getEmpId());
 			int empid = ticket.getEmpId();
-			
+			logger.info("Accessing database");
 			Optional<Employee> e = eDao.findById(empid);
 			if(!e.isPresent()) {
-				System.out.println("not present");
+				logger.info("User Not Present");
 			} else {
 				ticket.setEmployee(e.get());
 				Date d = new Date();
 				ticket.setTime(d);
+				logger.info("Adding Ticket to Database");
 				dao.save(ticket);
 			}	
 		
 		} catch(Exception j) {
-			System.out.println(j);
+			logger.warn(j);
 		}
 		
+		logger.info("Returning Added Ticket");
 		return dao.findById(ticket.getId());
 	}
-	
-	
-//	@Autowired
-//	private EmployeeDao dao;
-//	
-//	@Override
-//	public Employee findLogin(String email, String password) {
-//		Employee e = dao.findLogin(email);
-//		if(e != null && e.getPassword().equals(password)) {
-//			return e;
-//		}
-//		return null;
-//	}
 
 }
