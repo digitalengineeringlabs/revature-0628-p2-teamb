@@ -3,6 +3,7 @@ import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { Injectable } from '@angular/core';
 import { TutorialService } from 'src/app/services/tutorial.service';
+import { NgForm } from '@angular/forms';
 
 
 const baseUrl = 'http://localhost:8080/api/tutorials';
@@ -29,6 +30,7 @@ export class TicketComponent implements OnInit {
   currentIndex = -1;
   title = '';
   message = '';
+  filter:string = "none";
 
   constructor(private httpClient: HttpClient,private http: HttpClient,private tutorialService: TutorialService) { }
 
@@ -79,6 +81,16 @@ export class TicketComponent implements OnInit {
         error => {
           console.log(error);
         });
+  }
+
+  filtering(form:NgForm) {
+    console.log(form.value.statusFilter);
+    this.filter = form.value.statusFilter;
+  }
+
+  formatDate(date:any) {
+    let d = new Date(date);
+    return d.getMonth() + "/" + d.getDate() + "/" + d.getFullYear();
   }
 
 }
