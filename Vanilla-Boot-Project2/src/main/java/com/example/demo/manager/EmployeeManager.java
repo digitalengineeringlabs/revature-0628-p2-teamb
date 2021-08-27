@@ -4,7 +4,7 @@ import com.example.demo.model.Employee;
 
 public interface EmployeeManager {
 
-	public Employee findLogin(String username, String password);
+	public Employee findLogin(String email, String password);
 	public Employee getAccount(int id);
 	
 }

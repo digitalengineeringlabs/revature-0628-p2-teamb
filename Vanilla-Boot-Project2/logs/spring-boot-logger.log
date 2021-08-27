@@ -1,0 +1,8 @@
+2021-08-26 17:56:33,916 INFO com.example.demo.controller.LoginController [http-nio-8080-exec-1] Recieved Login Post Request
+2021-08-26 17:56:33,916 INFO com.example.demo.manager.EmployeeManagerImpl [http-nio-8080-exec-1] Accessing database
+2021-08-26 17:56:33,952 INFO com.example.demo.manager.EmployeeManagerImpl [http-nio-8080-exec-1] Returning employee information
+2021-08-26 17:56:33,953 INFO com.example.demo.controller.LoginController [http-nio-8080-exec-1] Sending Successful Login Response
+2021-08-26 17:56:38,070 INFO com.example.demo.controller.getTicketController [http-nio-8080-exec-2] Recieved MyTickets Post Request
+2021-08-26 17:56:38,071 INFO com.example.demo.manager.EmployeeManagerImpl [http-nio-8080-exec-2] Accessing database
+2021-08-26 17:56:38,106 INFO com.example.demo.manager.EmployeeManagerImpl [http-nio-8080-exec-2] Returning employee information
+2021-08-26 17:56:38,107 INFO com.example.demo.controller.getTicketController [http-nio-8080-exec-2] Sending Successful MyTickets Response
