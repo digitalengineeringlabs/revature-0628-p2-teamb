@@ -24,28 +24,30 @@
       </tr>
       </thead>
       <tbody>
-      <tr *ngFor="let ticket of tickets; let i = index"
-        [class.active]="i == currentIndex"
-        (click)="setActiveTutorial(ticket, i)"
-        >
-        <td><span>{{ticket.id}}</span></td>
-        <td><span>{{ticket.amount}}</span></td>
-        <td><span>{{ticket.description}}</span></td>
-        <td><span>{{ticket.status}}</span></td>
-        <td><span>{{ticket.time}}</span></td>
-        <td><span>{{ticket.type}}</span></td>
-
-       <button class="button" (click)="updateApproved(ticket.status)"> Approve</button>
-       <button class="button" (click)="updateDenied(ticket.status)"> Deny</button>
-       <button class="button" (click)="updatePending(ticket.status)"> Pending</button>
-      </tr>
+        <ng-container *ngIf="filter === 'none'; else other">
+          <tr *ngFor="let ticket of tickets; let i = index"
+            [class.active]="i == currentIndex"
+            (click)="setActiveTutorial(ticket, i)">
+              <td><span>{{ticket.id}}</span></td>
+              <td><span>{{ticket.amount}}</span></td>
+              <td><span>{{ticket.description}}</span></td>
+              <td><span>{{ticket.status}}</span></td>
+              <td><span>{{formatDate(ticket.time)}}</span></td>
+              <td><span>{{ticket.type}}</span></td>
+          <button class="button" (click)="updateApproved(ticket.status)"> Approve</button>
+          <button class="button" (click)="updateDenied(ticket.status)"> Deny</button>
+          <button class="button" (click)="updatePending(ticket.status)"> Pending</button>
+          </tr>
+        </ng-container>
       </tbody>
     </table>
   </div>
 
   
   <ng-template #other>
-    <ng-container *ngFor="let ticket of tickets">
+    <ng-container *ngFor="let ticket of tickets; let i = index"
+    [class.active]="i == currentIndex"
+    (click)="setActiveTutorial(ticket, i)">
       <tr *ngIf="ticket.status === filter">
         <td><span>{{ticket.id}}</span></td>
         <td><span>{{ticket.amount}}</span></td>
@@ -53,6 +55,9 @@
         <td><span>{{ticket.status}}</span></td>
         <td><span>{{formatDate(ticket.time)}}</span></td>
         <td><span>{{ticket.type}}</span></td>
+        <button class="button" (click)="updateApproved(ticket.status)"> Approve</button>
+          <button class="button" (click)="updateDenied(ticket.status)"> Deny</button>
+          <button class="button" (click)="updatePending(ticket.status)"> Pending</button>
       </tr>
     </ng-container>
   </ng-template>
