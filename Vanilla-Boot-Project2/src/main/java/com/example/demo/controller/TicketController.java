@@ -12,6 +12,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.example.demo.model.Ticket;
@@ -22,14 +23,14 @@ import com.example.demo.services.TicketService;
 
 
 
+@CrossOrigin(origins = "http://localhost:4200")
 @RestController
-@CrossOrigin
-@SpringBootApplication
-
+@RequestMapping("/api")
 public class TicketController {
 
 	@Autowired
 	private TicketService service;
+	@Autowired
 	Repository repository;
 	
 	@GetMapping("/Alltickets")
@@ -38,7 +39,7 @@ public class TicketController {
 	}
 
 	@PutMapping("/tutorials/{id}")
-	public ResponseEntity<Ticket> updateTutorial(@PathVariable("id") long id, @RequestBody Ticket riembursement) {
+	public ResponseEntity<Ticket> updateTutorial(@PathVariable("id") Integer id, @RequestBody Ticket riembursement) {
 		Optional<Ticket> tutorialData = repository.findById(id);
 
 		if (tutorialData.isPresent()) {
@@ -48,7 +49,8 @@ public class TicketController {
 			_tutorial.setType(riembursement.getType());
 			_tutorial.setId(riembursement.getId());
 			_tutorial.setStatus(riembursement.getStatus());
-			
+			_tutorial.setEmpId(riembursement.getEmpId());
+			_tutorial.setTime(riembursement.getTime());
 			return new ResponseEntity<>(repository.save(_tutorial), HttpStatus.OK);
 		} else {
 			return new ResponseEntity<>(HttpStatus.NOT_FOUND);

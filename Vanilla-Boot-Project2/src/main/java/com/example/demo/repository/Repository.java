@@ -7,6 +7,6 @@ import org.springframework.data.jpa.repository.JpaRepository;
 import com.example.demo.model.Ticket;
 
 
-public interface Repository extends JpaRepository<Ticket, Long> {
+public interface Repository extends JpaRepository<Ticket, Integer> {
 
 }

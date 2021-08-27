@@ -13,7 +13,10 @@
       </tr>
       </thead>
       <tbody>
-      <tr *ngFor="let ticket of tickets">
+      <tr *ngFor="let ticket of tickets; let i = index"
+        [class.active]="i == currentIndex"
+        (click)="setActiveTutorial(ticket, i)"
+        >
         <td><span>{{ticket.id}}</span></td>
         <td><span>{{ticket.amount}}</span></td>
         <td><span>{{ticket.description}}</span></td>
