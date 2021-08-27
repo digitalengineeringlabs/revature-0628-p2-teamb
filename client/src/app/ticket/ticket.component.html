@@ -28,7 +28,7 @@
             [class.active]="i == currentIndex"
             (click)="setActiveTutorial(ticket, i)">
               <td><span>{{ticket.id}}</span></td>
-              <td><span>{{ticket.amount}}</span></td>
+              <td><span>$ {{ticket.amount}}</span></td>
               <td><span>{{ticket.description}}</span></td>
               <td><span>{{ticket.status}}</span></td>
               <td><span>{{formatDate(ticket.time)}}</span></td>
