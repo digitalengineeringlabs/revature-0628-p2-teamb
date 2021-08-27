@@ -26,6 +26,7 @@ import { Router } from '@angular/router';
       .subscribe({
         next:(data:any)=>{
           console.log(data);
+          this.router.navigate(['home']);
           
         },
         error:(error)=>{
