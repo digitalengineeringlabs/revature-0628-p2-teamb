@@ -11,7 +11,7 @@ import com.example.demo.model.Ticket;
 import com.example.demo.services.TicketService;
 
 @RestController
-//@CrossOrigin(origins = "http://localhost:4200"
+@CrossOrigin
 @SpringBootApplication
 
 public class TicketController {
@@ -19,25 +19,10 @@ public class TicketController {
 	@Autowired
 	private TicketService service;
 	
-	@CrossOrigin(origins="http://localhost:4200")
 	@GetMapping("/Alltickets")
 	public List<Ticket> getTickets(){
 		return service.getTickets();
 	}
 
-//	@CrossOrigin(origins="http://localhost:4200")
-//	@GetMapping("/home")
-//	public List<Ticket> getEmpTickets() {
-//		List<Ticket> allTickets = service.getTickets();
-//		List<Ticket> empTickets = null;
-//		for(int counter = 0; counter < allTickets.size(); counter++) {
-//			Ticket tic = allTickets.get(counter);
-//			if()
-//		}
-//		
-//		
-//		
-//		return empTickets;
-//	}
 	
 }

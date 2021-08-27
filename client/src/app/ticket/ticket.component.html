@@ -1,4 +1,3 @@
-<p>ticket works!</p>
 <div class="container">
     <table class="table table-bordered table-striped table-dark">
       <thead>
@@ -10,20 +9,17 @@
         <th>status</th>
         <th>time</th>
         <th>type</th>
-        <th>emp id</th>
       </tr>
       </thead>
       <tbody>
-        <tr *ngFor="let ticket of tickets"> 
-       
-          <td><span>{{ticket.id}}</span></td>
-          <td><span>{{ticket.amount}}</span></td>
-          <td><span>{{ticket.description}}</span></td>
-          <td><span>{{ticket.status}}</span></td>
-          <td><span>{{ticket.time}}</span></td>
-          <td><span>{{ticket.type}}</span></td>
-          <td><span>{{ticket.employee_id}}</span></td>
-        </tr>
+      <tr *ngFor="let ticket of tickets">
+        <td><span>{{ticket.id}}</span></td>
+        <td><span>{{ticket.amount}}</span></td>
+        <td><span>{{ticket.description}}</span></td>
+        <td><span>{{ticket.status}}</span></td>
+        <td><span>{{ticket.time}}</span></td>
+        <td><span>{{ticket.type}}</span></td>
+      </tr>
       </tbody>
     </table>
   </div>

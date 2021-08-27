@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { HttpClient, HttpClientModule } from '@angular/common/http';
-import { Router, ActivatedRoute, ParamMap } from "@angular/router";
-
+import { HttpClient } from '@angular/common/http';
+import { Router } from '@angular/router';
 
 export class Ticket {
   constructor(
@@ -37,7 +36,7 @@ export class TicketComponent implements OnInit {
   
 
   getTickets(){
-    this.httpClient.get<any>('http://localhost:8080/tickets').subscribe(
+    this.httpClient.get<any>('http://localhost:8080/Alltickets').subscribe(
       response => {
         console.log(response);
         this.tickets = response;
