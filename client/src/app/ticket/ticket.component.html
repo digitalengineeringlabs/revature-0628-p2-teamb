@@ -36,6 +36,8 @@
         <td><span>{{ticket.type}}</span></td>
 
        <button class="button" (click)="updateApproved(ticket.status)"> Approve</button>
+       <button class="button" (click)="updateDenied(ticket.status)"> Deny</button>
+       <button class="button" (click)="updatePending(ticket.status)"> Pending</button>
       </tr>
       </tbody>
     </table>

@@ -83,6 +83,58 @@ export class TicketComponent implements OnInit {
         });
   }
 
+  updateDenied(status2: any){
+    const data = {
+      amount: this.currentTutorial.amount,
+      description: this.currentTutorial.description,
+      time: this.currentTutorial.time,
+      type: this.currentTutorial.type,
+      employee_id: this.currentTutorial.employee_id,
+      id: this.currentTutorial.id,
+      
+      status: status2='denied' 
+    };
+
+    this.message = '';
+    console.log(data);
+    this.tutorialService.update(this.currentTutorial.id, data)
+    .subscribe(
+      response => {
+          this.currentTutorial.status = 'denied';
+          console.log(response);
+          this.message = response.message ? response.message : 'The riembursement was edited successfully!';
+        },
+        error => {
+          console.log(error);
+        });
+  }
+
+  updatePending(status2: any){
+    const data = {
+      amount: this.currentTutorial.amount,
+      description: this.currentTutorial.description,
+      time: this.currentTutorial.time,
+      type: this.currentTutorial.type,
+      employee_id: this.currentTutorial.employee_id,
+      id: this.currentTutorial.id,
+      
+      status: status2='pending' 
+    };
+
+    this.message = '';
+    console.log(data);
+    this.tutorialService.update(this.currentTutorial.id, data)
+    .subscribe(
+      response => {
+          this.currentTutorial.status = 'pending';
+          console.log(response);
+          this.message = response.message ? response.message : 'The riembursement was edited successfully!';
+        },
+        error => {
+          console.log(error);
+        });
+  }
+
   filtering(form:NgForm) {
     console.log(form.value.statusFilter);
     this.filter = form.value.statusFilter;
