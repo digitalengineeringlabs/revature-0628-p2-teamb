@@ -82,3 +82,62 @@
 2021-08-26 21:16:40,054 INFO com.example.demo.manager.EmployeeManagerImpl [main] Returning employee information
 2021-08-26 21:16:40,059 INFO com.example.demo.manager.EmployeeManagerImpl [main] Accessing database
 2021-08-26 21:16:40,099 INFO com.example.demo.manager.EmployeeManagerImpl [main] Returning employee information
+2021-08-27 01:03:43,887 INFO com.example.demo.controller.getTicketController [http-nio-8080-exec-2] Recieved MyTickets Post Request
+2021-08-27 01:03:43,888 INFO com.example.demo.manager.EmployeeManagerImpl [http-nio-8080-exec-2] Accessing database
+2021-08-27 01:03:43,965 INFO com.example.demo.manager.EmployeeManagerImpl [http-nio-8080-exec-2] Returning employee information
+2021-08-27 01:03:43,965 INFO com.example.demo.controller.getTicketController [http-nio-8080-exec-2] Sending Successful MyTickets Response
+2021-08-27 01:04:00,502 INFO com.example.demo.controller.getTicketController [http-nio-8080-exec-3] Recieved MyTickets Post Request
+2021-08-27 01:04:00,503 INFO com.example.demo.manager.EmployeeManagerImpl [http-nio-8080-exec-3] Accessing database
+2021-08-27 01:04:00,508 INFO com.example.demo.manager.EmployeeManagerImpl [http-nio-8080-exec-3] Returning employee information
+2021-08-27 01:04:00,509 INFO com.example.demo.controller.getTicketController [http-nio-8080-exec-3] Sending Successful MyTickets Response
+2021-08-27 01:04:03,419 INFO com.example.demo.controller.TicketController [http-nio-8080-exec-4] Recieved Get All Tickets Request
+2021-08-27 01:04:29,963 INFO com.example.demo.controller.getTicketController [http-nio-8080-exec-10] Recieved MyTickets Post Request
+2021-08-27 01:04:29,964 INFO com.example.demo.manager.EmployeeManagerImpl [http-nio-8080-exec-10] Accessing database
+2021-08-27 01:04:29,968 INFO com.example.demo.manager.EmployeeManagerImpl [http-nio-8080-exec-10] Returning employee information
+2021-08-27 01:04:29,969 INFO com.example.demo.controller.getTicketController [http-nio-8080-exec-10] Sending Successful MyTickets Response
+2021-08-27 01:07:07,077 INFO com.example.demo.controller.getTicketController [http-nio-8080-exec-2] Recieved MyTickets Post Request
+2021-08-27 01:07:07,077 INFO com.example.demo.manager.EmployeeManagerImpl [http-nio-8080-exec-2] Accessing database
+2021-08-27 01:07:07,080 INFO com.example.demo.manager.EmployeeManagerImpl [http-nio-8080-exec-2] Returning employee information
+2021-08-27 01:07:07,081 INFO com.example.demo.controller.getTicketController [http-nio-8080-exec-2] Sending Successful MyTickets Response
+2021-08-27 01:09:19,646 INFO com.example.demo.controller.TicketController [http-nio-8080-exec-4] Recieved Get All Tickets Request
+2021-08-27 01:09:21,828 INFO com.example.demo.controller.getTicketController [http-nio-8080-exec-5] Recieved MyTickets Post Request
+2021-08-27 01:09:21,829 INFO com.example.demo.manager.EmployeeManagerImpl [http-nio-8080-exec-5] Accessing database
+2021-08-27 01:09:21,832 INFO com.example.demo.manager.EmployeeManagerImpl [http-nio-8080-exec-5] Returning employee information
+2021-08-27 01:09:21,832 INFO com.example.demo.controller.getTicketController [http-nio-8080-exec-5] Sending Successful MyTickets Response
+2021-08-27 10:07:27,524 INFO com.example.demo.controller.getTicketController [http-nio-8080-exec-2] Recieved MyTickets Post Request
+2021-08-27 10:07:27,526 INFO com.example.demo.manager.EmployeeManagerImpl [http-nio-8080-exec-2] Accessing database
+2021-08-27 10:07:27,605 INFO com.example.demo.manager.EmployeeManagerImpl [http-nio-8080-exec-2] Returning employee information
+2021-08-27 10:07:27,605 INFO com.example.demo.controller.getTicketController [http-nio-8080-exec-2] Sending Successful MyTickets Response
+2021-08-27 10:07:41,107 INFO com.example.demo.controller.getTicketController [http-nio-8080-exec-3] Recieved MyTickets Post Request
+2021-08-27 10:07:41,107 INFO com.example.demo.manager.EmployeeManagerImpl [http-nio-8080-exec-3] Accessing database
+2021-08-27 10:07:41,110 INFO com.example.demo.manager.EmployeeManagerImpl [http-nio-8080-exec-3] Returning employee information
+2021-08-27 10:07:41,111 INFO com.example.demo.controller.getTicketController [http-nio-8080-exec-3] Sending Successful MyTickets Response
+2021-08-27 10:08:07,963 INFO com.example.demo.controller.getTicketController [http-nio-8080-exec-4] Recieved MyTickets Post Request
+2021-08-27 10:08:07,964 INFO com.example.demo.manager.EmployeeManagerImpl [http-nio-8080-exec-4] Accessing database
+2021-08-27 10:08:07,968 INFO com.example.demo.manager.EmployeeManagerImpl [http-nio-8080-exec-4] Returning employee information
+2021-08-27 10:08:07,968 INFO com.example.demo.controller.getTicketController [http-nio-8080-exec-4] Sending Successful MyTickets Response
+2021-08-27 10:08:24,771 INFO com.example.demo.controller.getTicketController [http-nio-8080-exec-5] Recieved MyTickets Post Request
+2021-08-27 10:08:24,771 INFO com.example.demo.manager.EmployeeManagerImpl [http-nio-8080-exec-5] Accessing database
+2021-08-27 10:08:24,775 INFO com.example.demo.manager.EmployeeManagerImpl [http-nio-8080-exec-5] Returning employee information
+2021-08-27 10:08:24,775 INFO com.example.demo.controller.getTicketController [http-nio-8080-exec-5] Sending Successful MyTickets Response
+2021-08-27 10:08:51,990 INFO com.example.demo.controller.getTicketController [http-nio-8080-exec-6] Recieved MyTickets Post Request
+2021-08-27 10:08:51,990 INFO com.example.demo.manager.EmployeeManagerImpl [http-nio-8080-exec-6] Accessing database
+2021-08-27 10:08:51,994 INFO com.example.demo.manager.EmployeeManagerImpl [http-nio-8080-exec-6] Returning employee information
+2021-08-27 10:08:51,994 INFO com.example.demo.controller.getTicketController [http-nio-8080-exec-6] Sending Successful MyTickets Response
+2021-08-27 10:09:24,947 INFO com.example.demo.controller.TicketController [http-nio-8080-exec-7] Recieved Get All Tickets Request
+2021-08-27 10:09:28,935 INFO com.example.demo.controller.getTicketController [http-nio-8080-exec-8] Recieved MyTickets Post Request
+2021-08-27 10:09:28,936 INFO com.example.demo.manager.EmployeeManagerImpl [http-nio-8080-exec-8] Accessing database
+2021-08-27 10:09:28,939 INFO com.example.demo.manager.EmployeeManagerImpl [http-nio-8080-exec-8] Returning employee information
+2021-08-27 10:09:28,939 INFO com.example.demo.controller.getTicketController [http-nio-8080-exec-8] Sending Successful MyTickets Response
+2021-08-27 10:09:31,570 INFO com.example.demo.controller.getTicketController [http-nio-8080-exec-9] Recieved MyTickets Post Request
+2021-08-27 10:09:31,571 INFO com.example.demo.manager.EmployeeManagerImpl [http-nio-8080-exec-9] Accessing database
+2021-08-27 10:09:31,574 INFO com.example.demo.manager.EmployeeManagerImpl [http-nio-8080-exec-9] Returning employee information
+2021-08-27 10:09:31,575 INFO com.example.demo.controller.getTicketController [http-nio-8080-exec-9] Sending Successful MyTickets Response
+2021-08-27 10:10:43,928 INFO com.example.demo.controller.getTicketController [http-nio-8080-exec-1] Recieved MyTickets Post Request
+2021-08-27 10:10:43,929 INFO com.example.demo.manager.EmployeeManagerImpl [http-nio-8080-exec-1] Accessing database
+2021-08-27 10:10:43,932 INFO com.example.demo.manager.EmployeeManagerImpl [http-nio-8080-exec-1] Returning employee information
+2021-08-27 10:10:43,932 INFO com.example.demo.controller.getTicketController [http-nio-8080-exec-1] Sending Successful MyTickets Response
+2021-08-27 10:10:46,592 INFO com.example.demo.controller.getTicketController [http-nio-8080-exec-2] Recieved MyTickets Post Request
+2021-08-27 10:10:46,593 INFO com.example.demo.manager.EmployeeManagerImpl [http-nio-8080-exec-2] Accessing database
+2021-08-27 10:10:46,596 INFO com.example.demo.manager.EmployeeManagerImpl [http-nio-8080-exec-2] Returning employee information
+2021-08-27 10:10:46,597 INFO com.example.demo.controller.getTicketController [http-nio-8080-exec-2] Sending Successful MyTickets Response
