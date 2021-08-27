@@ -1,24 +1,31 @@
-import { Component, Input, OnInit } from "@angular/core"; 
+import { Component, Input, OnInit, ChangeDetectionStrategy, OnChanges, SimpleChanges, Inject } from "@angular/core"; 
 import { HttpClient } from "@angular/common/http";
-import { Router, ActivatedRoute } from "@angular/router";
+import { Router} from "@angular/router";
+import { EmployeeTicketView, EmployeeTicketViewComponent } from "../employee-ticket-view/employee-ticket-view.component";
+import { StorageService } from "./storage.service";
 
 
 @Component({
-  selector: 'app-login',
+  selector: 'showticket',
   templateUrl: './showTicket.html'
 })
 export class ShowTicket implements OnInit {
 
-    ticket = {};
+    
+    teekit = this.service.bhs$.subscribe(_ticket => _ticket);
+    ticket = this.service.getScope();
 
-    constructor(private http:HttpClient, private route:ActivatedRoute, 
-        private router:Router) { 
-            
-        }
-
-    ngOnInit() {
-        //this.ticket = this.router.getCurrentNavigation()?.extras.state;
+    constructor(protected http:HttpClient, protected router:Router,protected service: StorageService) {
+       
     }
-  
+    
+    ngOnInit() {
+
+    }
+    
+    getScopeInfo() {
+      console.log(this.service.getScope())
+      this.ticket = this.service.getScope();
+    }
 
 }

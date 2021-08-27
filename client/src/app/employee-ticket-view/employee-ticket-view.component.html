@@ -1,8 +1,13 @@
 
+    <div class="row justify-content-center">
+        <div class="col-lg-5">
+            <showticket></showticket>
+        </div>
+        
+    </div>
     
-     
   <div class="jumbotron card">
-    <h2>View Past Tickets </h2>
+    <h2 (click)="getScopeInfo()">View Past Tickets </h2>
     <!--Need to modify-->
   <form (ngSubmit)="filtering(f)" #f="ngForm">
       <label for="statusFilter">Filter requests by ticket status</label>
@@ -24,7 +29,6 @@
                   <th>Receipt Document or Image</th>
                   <th>Timestamp</th>
                   <th>Status</th>
-                  <th></th>
               </tr>
           </thead>
           <tbody>

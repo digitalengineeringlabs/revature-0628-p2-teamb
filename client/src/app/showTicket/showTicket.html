@@ -1,9 +1,9 @@
-<div>
-    <h3>{{ticket}}</h3>
-    <ul>
-        <li>{{ticket}}</li>
-        <li>{{ticket}}</li>
-        <li>{{ticket}}</li>
-        <li>{{ticket}}</li>
+<div class="sticketCont">
+    <h3 (click)="getScopeInfo()">Ticket ID: {{ticket.id}}</h3>
+    <ul class="specificTicket">
+        <li (click)="getScopeInfo()">Ticket type: {{ticket.type}}</li>
+        <li>Ticekt amount: {{ticket.amount}}</li>
+        <li>Ticket status: {{ticket.status}}</li>
+        <li>Ticket Description: {{ticket.description}}</li>
     </ul>
 </div>

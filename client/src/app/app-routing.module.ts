@@ -8,12 +8,15 @@ const routes: Routes = [
   { path:'ticket', component: newTicket}, 
   { path: 'tickets', component: Ticket},
   { path: 'financeManager', component: TicketComponent},
-  { path: 'employeeTicketView', component: EmployeeTicketViewComponent},
+  { path: 'employeeTicketView', component: EmployeeTicketViewComponent,
+    children: [
+      {path: 'view/:currentid', component: ShowTicket}
+    ]},
   { path: 'showticket', component: ShowTicket},
 ];
 
 @NgModule({
-  imports: [RouterModule.forRoot(routes)],
+  imports: [RouterModule.forRoot(routes, { onSameUrlNavigation: 'reload'})],
   exports: [RouterModule]
 })
 export class AppRoutingModule { }
