@@ -26,15 +26,9 @@ public class NewTicketController {
 	
 	@CrossOrigin(origins="http://localhost:4200")
 	@PostMapping(consumes="application/json", produces="application/json")
-	public ResponseEntity<Object> addNewTicket(@RequestBody Ticket ticket) {
+	public ResponseEntity<Object> addNewTicket(@RequestBody Ticket ticket) throws Exception {
 		logger.info("Recieved Add new Ticket Request");
-		try {
-			logger.info("Sending Successful Add new Ticket Response");
-			return new ResponseEntity<>(manager.postNewTicket(ticket), HttpStatus.CREATED);
-		} catch (Exception e) {
-			logger.warn("Failed to add new ticket");
-			return new ResponseEntity<>(HttpStatus.BAD_REQUEST);
-		}
+		return new ResponseEntity<>(manager.postNewTicket(ticket), HttpStatus.CREATED);
 	}
 	
 }

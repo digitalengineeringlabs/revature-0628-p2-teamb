@@ -32,7 +32,7 @@ public class LoginController {
 			return new ResponseEntity<>("{\"id\":" + employ.getId() + ", \"role\": \"" + employ.getRole() + "\" }", HttpStatus.CREATED);
 		}
 		logger.info("Sending Unsuccessful Login Response");
-		return new ResponseEntity<>(null, HttpStatus.BAD_REQUEST);
+		return new ResponseEntity<>(null, HttpStatus.CREATED);
 	}
 	
 }

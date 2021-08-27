@@ -1,5 +1,16 @@
 <div class="container">
-    <table class="table table-bordered table-striped table-dark">
+    
+  <form (ngSubmit)="filtering(f)" #f="ngForm">
+    <label for="statusFilter">Filter requests by ticket status</label>
+    <select name="statusFilter" id="statusFilter" ngModel>
+      <option value="none">none</option>
+      <option value="pending">Pending</option>
+      <option value="approved">Approved</option>
+      <option value="denied">Denied</option>
+    </select>
+    <button type="submit">Search</button>
+  </form>
+  <table class="table table-bordered table-striped table-dark">
       <thead>
       <tr>
         <th>ticket id</th>
@@ -11,14 +22,30 @@
       </tr>
       </thead>
       <tbody>
-      <tr *ngFor="let ticket of tickets">
+        <ng-container *ngIf="filter === 'none'; else other">
+          <tr *ngFor="let ticket of tickets">
+            <td><span>{{ticket.id}}</span></td>
+            <td><span>{{ticket.amount}}</span></td>
+            <td><span>{{ticket.description}}</span></td>
+            <td><span>{{ticket.status}}</span></td>
+            <td><span>{{formatDate(ticket.time)}}</span></td>
+            <td><span>{{ticket.type}}</span></td>
+          </tr>
+        </ng-container>
+      </tbody>
+    </table>
+  </div>
+
+
+  <ng-template #other>
+    <ng-container *ngFor="let ticket of tickets">
+      <tr *ngIf="ticket.status === filter">
         <td><span>{{ticket.id}}</span></td>
         <td><span>{{ticket.amount}}</span></td>
         <td><span>{{ticket.description}}</span></td>
         <td><span>{{ticket.status}}</span></td>
-        <td><span>{{ticket.time}}</span></td>
+        <td><span>{{formatDate(ticket.time)}}</span></td>
         <td><span>{{ticket.type}}</span></td>
       </tr>
-      </tbody>
-    </table>
-  </div>
+    </ng-container>
+  </ng-template>

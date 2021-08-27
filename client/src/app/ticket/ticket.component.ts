@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { Router } from '@angular/router';
+import { NgForm } from '@angular/forms';
 
 export class Ticket {
   constructor(
@@ -23,6 +24,7 @@ export class Ticket {
 export class TicketComponent implements OnInit {
 
   tickets: Ticket[] | undefined;
+  filter:string = "none";
 
   constructor(
     private httpClient: HttpClient
@@ -39,6 +41,16 @@ export class TicketComponent implements OnInit {
         this.tickets = response;
       }
     );
+  }
+
+  filtering(form:NgForm) {
+    console.log(form.value.statusFilter);
+    this.filter = form.value.statusFilter;
+  }
+
+  formatDate(date:any) {
+    let d = new Date(date);
+    return d.getMonth() + "/" + d.getDate() + "/" + d.getFullYear();
   }
 
 }

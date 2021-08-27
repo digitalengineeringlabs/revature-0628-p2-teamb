@@ -22,7 +22,6 @@ public class EmployeeManagerImpl implements EmployeeManager {
 	public Employee findLogin(String email, String password) {
 		logger.info("Accessing database");
 		Employee employee = dao.findLogin(email);
-		System.out.println(employee);
 		if(employee != null && employee.getPassword().equals(password)) {
 			logger.info("Returning employee information");
 			return employee;
