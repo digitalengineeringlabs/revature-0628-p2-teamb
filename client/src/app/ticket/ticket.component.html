@@ -20,6 +20,7 @@
         <th>status</th>
         <th>time</th>
         <th>type</th>
+        <th>emp id</th>
         <th>Actions</th>
       </tr>
       </thead>
@@ -34,10 +35,10 @@
         <td><span>{{ticket.status}}</span></td>
         <td><span>{{ticket.time}}</span></td>
         <td><span>{{ticket.type}}</span></td>
-
-       <button class="button" (click)="updateApproved(ticket.status)"> Approve</button>
+        <td><span>{{ticket.employee_id}}</span></td>
+       <!-- <button class="button" (click)="updateApproved(ticket.status)"> Approve</button>
        <button class="button" (click)="updateDenied(ticket.status)"> Deny</button>
-       <button class="button" (click)="updatePending(ticket.status)"> Pending</button>
+       <button class="button" (click)="updatePending(ticket.status)"> Pending</button> -->
       </tr>
       </tbody>
     </table>

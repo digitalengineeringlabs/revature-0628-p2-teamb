@@ -45,12 +45,11 @@ public class Ticket {
 	
 	public Ticket() {}
 	
-	public Ticket(String type, String description, float amount, Date time, String status) {
-		this.type = type;
-		this.description = description;
-		this.amount = amount;
-		this.status = status;
-	}
+	/*
+	 * public Ticket(String type, String description, float amount, Date time,
+	 * String status) { this.type = type; this.description = description;
+	 * this.amount = amount; this.status = status; }
+	 */
 
 	public Integer getEmpId() {
 		return this.empid;

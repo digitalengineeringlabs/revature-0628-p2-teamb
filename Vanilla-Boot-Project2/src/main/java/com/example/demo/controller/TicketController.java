@@ -23,9 +23,10 @@ import com.example.demo.services.TicketService;
 
 
 
-@CrossOrigin(origins = "http://localhost:4200")
+//@CrossOrigin(origins = "http://localhost:4200")
 @RestController
 @RequestMapping("/api")
+@CrossOrigin
 public class TicketController {
 
 	@Autowired

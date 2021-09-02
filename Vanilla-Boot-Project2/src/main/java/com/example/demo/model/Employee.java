@@ -45,14 +45,14 @@ public class Employee {
 	
 	public Employee() {}
 	
-	public Employee(String username, String email, String password, String role, String firstname, String lastname) {
-		this.username = username;
-		this.email = email;
-		this.password = password;
-		this.role = role;
-		this.firstname = firstname;
-		this.lastname = lastname;
-	}
+//	public Employee(String username, String email, String password, String role, String firstname, String lastname) {
+//		this.username = username;
+//		this.email = email;
+//		this.password = password;
+//		this.role = role;
+//		this.firstname = firstname;
+//		this.lastname = lastname;
+//	}
 	
 	public int getId() {
 		return id;
