@@ -19,7 +19,7 @@ As a Financial Manager I can View any/all employee Reimbursement Requests
 
 As a Financial Manager I can approve/deny an Employee's Reimbursement Request
 
-View personolized pop up for ticket detail
+View personalized pop up for ticket detail
  
 Authgard for security
  
