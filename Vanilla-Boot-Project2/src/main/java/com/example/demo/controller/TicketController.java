@@ -47,15 +47,15 @@ public class TicketController {
 		Optional<Ticket> tutorialData = repository.findById(id);
 
 		if (tutorialData.isPresent()) {
-			Ticket _tutorial = tutorialData.get();
-			_tutorial.setAmount(riembursement.getAmount());
-			_tutorial.setDescription(riembursement.getDescription());
-			_tutorial.setType(riembursement.getType());
-			_tutorial.setId(riembursement.getId());
-			_tutorial.setStatus(riembursement.getStatus());
-			_tutorial.setEmpId(riembursement.getEmpId());
-			_tutorial.setTime(riembursement.getTime());
-			return new ResponseEntity<>(repository.save(_tutorial), HttpStatus.OK);
+			Ticket newobj = tutorialData.get();
+			newobj.setAmount(riembursement.getAmount());
+			newobj.setDescription(riembursement.getDescription());
+			newobj.setType(riembursement.getType());
+			newobj.setId(riembursement.getId());
+			newobj.setStatus(riembursement.getStatus());
+			newobj.setEmpId(riembursement.getEmpId());
+			newobj.setTime(riembursement.getTime());
+			return new ResponseEntity<>(repository.save(newobj), HttpStatus.OK);
 		} else {
 			return new ResponseEntity<>(HttpStatus.NOT_FOUND);
 		}
