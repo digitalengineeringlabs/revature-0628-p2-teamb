@@ -46,8 +46,8 @@
 			<attribute name="maven.pomderived" value="true"/>
 		</attributes>
 	</classpathentry>
-	<classpathentry kind="lib" path="C:/Users/Angela Lee/Documents/apache-tomcat/apache-tomcat-9.0.46/bin/bootstrap.jar"/>
-	<classpathentry kind="lib" path="C:/Users/Angela Lee/Documents/apache-tomcat/apache-tomcat-9.0.46/bin/commons-daemon.jar"/>
-	<classpathentry kind="lib" path="C:/Users/Angela Lee/Documents/apache-tomcat/apache-tomcat-9.0.46/bin/tomcat-juli.jar"/>
+	<classpathentry kind="lib" path="C:/Users/Angela/Downloads/apache-tomcat-9.0.52-windows-x64/apache-tomcat-9.0.52/bin/bootstrap.jar"/>
+	<classpathentry kind="lib" path="C:/Users/Angela/Downloads/apache-tomcat-9.0.52-windows-x64/apache-tomcat-9.0.52/bin/commons-daemon.jar"/>
+	<classpathentry kind="lib" path="C:/Users/Angela/Downloads/apache-tomcat-9.0.52-windows-x64/apache-tomcat-9.0.52/bin/tomcat-juli.jar"/>
 	<classpathentry kind="output" path="target/classes"/>
 </classpath>
